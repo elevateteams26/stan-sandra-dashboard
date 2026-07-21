@@ -1,0 +1,1265 @@
+<!doctype html><html><head><!-- frame-runtime --><script>window.__FRAME_PREAMBLE={"capabilities":{"downloads":"downloads.BABDwU1K.js","mcp":"mcp.hoz5jxDa.js","permissions":"permissions.ByA9Fd8x.js","self":"self.D3u1zjZe.js","user":"user.Cp1-RnjB.js"},"transforms":"_transforms.DYk1Ltlh.js","comments":"_comments.Dp6RDy7J.js","translate":"_translate.C9eLA9Mu.js"}</script><script>(function(){"use strict";const we="modulepreload",Oe=function(e){return"/"+e},Se={},ee=function(t,n,c){let i=Promise.resolve();function s(f){const a=new Event("vite:preloadError",{cancelable:!0});if(a.payload=f,window.dispatchEvent(a),!a.defaultPrevented)throw f}return i.then(f=>{for(const a of f||[])a.status==="rejected"&&s(a.reason);return t().catch(s)})},te=["light","dark","system"];function ne(e){if(e===null||typeof e!="object")return!1;const t=e.__frame_init;return t!==null&&typeof t=="object"}function Y(e){return e!==null&&typeof e=="object"&&e.__frame_size_poke===!0}function re(e){if(e===null||typeof e!="object")return!1;const t=e.__frame_theme;if(t===null||typeof t!="object")return!1;const n=t.theme;return typeof n=="string"&&te.includes(n)}function se(e){try{typeof reportError=="function"?reportError(e):setTimeout(()=>{throw e},0)}catch{}}const oe=Object.freeze(Object.assign(Object.create(null),{user:Object.freeze(Object.assign(Object.create(null),{id:null,isOwner:!1,canEdit:!1,name:null,avatarUrl:null,email:null}))})),ie={};function K(e){if(window===top||e.type==="auxclick"&&e.button!==1)return;const t=e.composedPath?e.composedPath():[e.target];let n=null;for(let f=0;f<t.length;f++){const a=t[f];if(a&&a.matches&&a.matches("a[href],area[href]")){n=a;break}}if(!n&&e.target&&e.target.closest&&(n=e.target.closest("a[href],area[href]")),!n)return;const c=n.getAttribute("href");if(!c)return;let i,s;try{i=new URL(c,document.baseURI),s=new URL(document.baseURI).origin}catch{return}(i.protocol==="http:"||i.protocol==="https:")&&i.origin!==s&&(e.preventDefault(),parent.postMessage({__frame_nav:!0,url:i.href},"*"))}const x={};function I(e){if(window===top)return;const t=Date.now();t-(x[e]||0)<500||(x[e]=t,parent.postMessage({__frame_engaged:!0,kind:e},"*"))}const ae=2e3,J=["wheel","touchstart","touchmove","keydown","pointerdown"];let G=0;function ce(e){e.isTrusted&&(G=Date.now())}function le(){addEventListener("click",K,!0),addEventListener("auxclick",K,!0)}function ue(){for(let e=0;e<J.length;e++)addEventListener(J[e],ce,{capture:!0,passive:!0});addEventListener("scroll",e=>{e.isTrusted&&Date.now()-G<ae&&I("scroll")},{capture:!0,passive:!0}),addEventListener("pointermove",e=>{e.isTrusted&&I("pointer")},{capture:!0,passive:!0}),addEventListener("click",e=>{e.isTrusted&&I("click")},{capture:!0,passive:!0})}const U="__frame_scroll",fe=150,de=310,pe=160,me=3e4;function he(){let e=0,t=!1,n=!1,c=!1,i=0;const s=p=>{try{sessionStorage.setItem(U,JSON.stringify({y:p}))}catch{}},f=()=>{if(t){t=!1;return}n=!0,clearTimeout(e),e=setTimeout(()=>s(scrollY),fe)};try{addEventListener("scroll",f,{passive:!0}),addEventListener("pagehide",()=>{clearTimeout(e),s(scrollY)})}catch{}const a=()=>{let p;try{p=sessionStorage.getItem(U)}catch{return null}if(p===null)return null;let b;try{b=JSON.parse(p)}catch{b=null}const l=b?.y;if(!(typeof l=="number"&&Number.isFinite(l)&&l>=0)){try{sessionStorage.removeItem(U)}catch{}return null}return l};let _=!1;const h=p=>{try{const b=scrollY;scrollTo({top:p,left:0,behavior:"instant"}),i=p,c=!0,s(p);const l=scrollY;l!==b&&(t=!0),l!==p&&!_&&(_=!0,addEventListener("load",()=>{try{if(scrollY===l){const g=a();h(g!==null?g:i)}}catch{}},{once:!0}))}catch{}},o=()=>{try{return!!location.hash}catch{return!0}};let u=!1;const d=()=>{try{if(u||innerWidth>de||innerHeight>pe)return;u=!0;const p=Date.now(),b=()=>{try{removeEventListener("resize",b)}catch{}if(Date.now()-p>me||n||o())return;const l=a();h(l!==null?l:i)};addEventListener("resize",b)}catch{}};let m=!1,y=!1;return{restore(){if(m||(m=!0,o()))return;const p=a();p!==null&&(h(p),d())},promoted(){if(y||(y=!0,o()))return;const p=a();p!==null?(h(p),d()):c&&h(i)}}}function ge(e,t,n){const c=[...t.values()].filter(i=>i.targets.some(s=>s.startsWith(e+".")));return{wrap(i,s){const f=`${e}.${i}`,a=c.filter(_=>_.targets.includes(f));return a.length===0?(..._)=>{try{return s(..._)}catch(h){return Promise.reject(h)}}:(..._)=>{let h=_;for(const u of a){const d=u.module.parameters;if(d)try{h=d(h)}catch{return Promise.reject({code:"transform_error",id:u.id,scope:e,message:"parameters transform failed"})}}let o;try{o=s(...h)}catch(u){o=Promise.reject(u)}return o.then(u=>{for(let d=a.length-1;d>=0;d--){const m=a[d],y=m.module.returns;if(y)try{u=y(u)}catch{return n({id:m.id,scope:e,leg:"returns"}),u}}return u},u=>{for(let d=a.length-1;d>=0;d--){const m=a[d],y=m.module.throws;if(y)try{u=y(u)}catch{return n({id:m.id,scope:e,leg:"throws"}),Promise.reject(u)}}return Promise.reject(u)})}}}}function _e(e,t,n,c=()=>{}){const i=new Set(e.changes??[]),s=new Map;for(const f of i){const a=t[f];a&&s.set(f,a)}return{contract:e.contract,changes:i,flags:new Set(e.flags??[]),capabilities:e.capabilities??{},capBudgets:e.capBudgets??{},transforms:s,shellOrigin:n.shellOrigin,mount:n.mount,pipe:f=>ge(f,s,c)}}(function(){const e=Object.defineProperty,t=globalThis,n=["RTCPeerConnection","webkitRTCPeerConnection","RTCDataChannel","RTCIceCandidate","RTCSessionDescription","RTCRtpSender","RTCRtpReceiver"];let c=0;for(let i=0;i<n.length;i++){const s=n[i];try{e(t,s,{value:void 0,writable:!1,configurable:!1})}catch{try{delete t[s]}catch{}try{e(t,s,{value:void 0,writable:!1,configurable:!0})}catch{}}typeof t[s]=="function"&&c++}if(c&&window!==top)try{parent.postMessage({__frame_rtc_lockdown_failed:c},"*")}catch{}})();const ye=1e4,be=Object.freeze([...window.__FRAME_PREAMBLE?.origins??["https://claude.ai","https://preview.claude.ai"]]);function V(e){for(const t of be)if(t.endsWith(":*"))try{const n=new URL(e);if(`${n.protocol}//${n.hostname}:*`===t)return!0}catch{}else if(e===t)return!0;return!1}const T=Object.freeze({...window.__FRAME_PREAMBLE?.capabilities}),z=window.__FRAME_PREAMBLE?.transforms,q=window.__FRAME_PREAMBLE?.comments,$=window.__FRAME_PREAMBLE?.translate,C=/^[\w.-]+\.js$/,ve=/^[a-z][a-z0-9_-]{0,63}$/;let X=null,P=null;function B(e,t,n){try{Object.defineProperty(e,t,{value:n,writable:!1,configurable:!1,enumerable:!0})}catch{try{Object.defineProperty(e,t,{value:n,writable:!1,configurable:!0,enumerable:!0})}catch{}}}let F=!1;function Q(e){const t=document.documentElement;e==="light"||e==="dark"?(t.dataset.theme=e,t.style.colorScheme=e,F=!0):F&&(delete t.dataset.theme,t.style.colorScheme="",F=!1)}const M=Object.assign(Object.create(null),{mcp:Object.assign(Object.create(null),{watchTool:{handlerArg:3}})}),R=new Map;function Z(e,t){const n=R.get(e);if(!n)return;const c=Object.assign(Object.create(null),t);Object.assign(n.impl,c),n.impl.__settled=()=>Promise.reject({code:"capability_removed",message:`${e}: method not in this runtime`});const i=n.queue;n.queue=[];for(const s of i){const f=c[s.method];if(f)if(M[e]?.[s.method])try{s.resolve(f(...s.args))}catch{k(s,M[e][s.method].handlerArg,{code:"transform_error",message:`${e}.${s.method} rejected its arguments`})}else f(...s.args).then(s.resolve,s.reject);else{const a={code:"capability_removed",message:`${e}.${s.method} is not in this runtime`},_=M[e]?.[s.method];if(_){k(s,_.handlerArg,a);continue}s.reject(a)}}}function Ee(e,t){const n=R.get(e);if(!n)return;n.impl.__settled=()=>Promise.reject(t);const c=n.queue;n.queue=[];for(const i of c){const s=M[e]?.[i.method];if(s){k(i,s.handlerArg,t);continue}i.reject(t)}}function N(e,t){const n=oe[e];if(!n){Ee(e,t);return}Z(e,Object.fromEntries(Object.entries(n).map(([c,i])=>[c,()=>Promise.resolve(i)])))}function k(e,t,n){if(e.syncState?.dead)return;const c=e.args[t];typeof c=="function"&&queueMicrotask(()=>{if(!e.syncState?.dead)try{c({type:"error",error:n})}catch(i){se(i)}})}const H=Object.getOwnPropertyDescriptor(window,"claude");if(window!==top&&!(H&&H.writable===!1)){le(),ue();let e=null;try{e=he()}catch{}const t=H?.value??{};B(window,"claude",t);const n=o=>{const u={impl:Object.create(null),queue:[]};R.set(o,u);const d=u.impl,m=ie[o],y=m===void 0?d:()=>{},p=new Proxy(y,{apply:(b,l,g)=>{const v=m,O=d[v]??d.__settled;return O?O(...g):new Promise((E,w)=>{u.queue.push({method:v,args:g,resolve:E,reject:w})})},get:(b,l)=>{if(typeof l!="string"||l==="then"||l==="toJSON"||l==="valueOf")return;if(l==="toString")return Object.prototype.toString;if(m!==void 0&&(l==="call"||l==="apply"||l==="bind"))return Function.prototype[l];const g=M[o]?.[l];return g?(...v)=>{if(typeof v[g.handlerArg]!="function")throw new TypeError(`${o}.${l} requires a handler function`);const O=d[l];if(O)return O(...v);if(d.__settled){const S={dead:!1},A={args:[...v],syncState:S};return d.__settled().catch(D=>k(A,g.handlerArg,D)),()=>{S.dead=!0}}let E=null;const w={dead:!1};return u.queue.push({method:l,args:v,resolve:S=>{E=typeof S=="function"?S:null,w.dead&&E?.()},reject:()=>{},syncState:w}),()=>{w.dead=!0,E?.()}}:(...v)=>{const O=d[l]??d.__settled;return O?O(...v):new Promise((E,w)=>{u.queue.push({method:l,args:v,resolve:E,reject:w})})}},set:()=>!1});B(t,o,p)};for(const o of Object.keys(T)){if(t[o]!==void 0){B(t,o,t[o]);continue}n(o)}let c=null,i=null,s=0;const f=o=>{o.source!==parent||!V(o.origin)||ne(o.data)&&(c=o.data.__frame_init,P=o.origin,removeEventListener("message",f),clearTimeout(s),i?.())};addEventListener("message",f),parent.postMessage({__frame_connect:!0},"*");const a=new Promise(o=>{i=o,s=setTimeout(()=>{removeEventListener("message",f),o()},ye)}),_=document.readyState==="loading"?new Promise(o=>document.addEventListener("DOMContentLoaded",()=>o(),{once:!0})):Promise.resolve();_.then(()=>{try{e?.restore()}catch{}});const h=o=>{if(!(o.source!==parent||!V(o.origin))&&Y(o.data)){removeEventListener("message",h);try{e?.promoted()}catch{}}};addEventListener("message",h),a.then(async()=>{if(!c||!P){for(const r of R.keys())N(r,{code:"not_granted",message:"frame initialization did not arrive - capability unavailable"});return}Q(c.theme);const o=P;let u=!1,d=!1;addEventListener("message",r=>{if(r.source!==parent||r.origin!==o)return;re(r.data)&&Q(r.data.__frame_theme.theme);const j=r.data?.__fc_mode;j&&typeof j=="object"&&!u&&q&&C.test(q)&&(u=!0,m(q).then(W=>W.install?.(o,j.on===!0)).catch(()=>{}));const L=r.data?.__ft_cmd;L&&typeof L=="object"&&!d&&$&&C.test($)&&(d=!0,m($).then(W=>W.install?.(o,L)).catch(()=>{}))});const m=r=>ee(()=>import("/_runtime/"+r),void 0),y=Object.keys(c.capabilities??{});for(const r of y)Object.hasOwn(T,r)||ve.test(r)&&t[r]===void 0&&(n(r),N(r,{code:"capability_disabled",message:"capability not in this runtime generation"}));const p=y.filter(r=>Object.hasOwn(T,r)).map(r=>[r,T[r]]).filter(r=>typeof r[1]=="string"&&C.test(r[1])),[b,...l]=await Promise.allSettled([z&&C.test(z)?m(z):Promise.resolve({}),...p.map(([,r])=>m(r))]),g=P;X=_e(c,b.status==="fulfilled"&&b.value?.TRANSFORMS||{},{shellOrigin:g,mount:Z},r=>parent.postMessage({__frame_cap_telemetry:r},g));const v=r=>parent.postMessage({__frame_cap_telemetry:{kind:"cap-load-error",cap:r}},g),O=X;l.forEach((r,j)=>{const L=p[j][0];if(r.status!=="fulfilled"){v(L);return}try{r.value?.install?.(O)}catch{v(L)}});for(const[r,j]of R)if(!(j.queue.length===0&&Object.keys(j.impl).length>0)){if(y.includes(r)){N(r,{code:"capability_disabled",message:"capability not available in this session"});continue}N(r,{code:"not_granted",message:"capability not available in this session"})}await _,parent.postMessage({__frame_ready:!0},P);let E=-1,w=0;const S=()=>{w=0;const r=Math.max(document.documentElement.scrollHeight,document.body?document.body.scrollHeight:0);r!==E&&(E=r,parent.postMessage({__frame_size:!0,h:r},g))},A=()=>{w||(w=setTimeout(S,200))},D=new ResizeObserver(A);D.observe(document.documentElement),document.body&&D.observe(document.body),document.addEventListener("load",A,!0),document.fonts?.ready.then(A,()=>{}),addEventListener("beforeprint",()=>{E=-1,S()}),A(),addEventListener("message",r=>{if(!(r.source!==parent||r.origin!==g)&&Y(r.data)){try{e?.promoted()}catch{}E=-1,A()}})})}})();</script><!-- /frame-runtime --><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}</style></head><body>
+<meta charset="utf-8">
+<title>Stan & Sandra's Dashboard — Elevate Teams</title>
+<style>
+  :root {
+    --blue: #2E5CFB; --blue-fade: rgba(46,92,251,0.10); --blue-border: rgba(46,92,251,0.22);
+    --yellow: #F1C834; --yellow-fade: rgba(241,200,52,0.14);
+    --navy: #071E24; --navy-2: #0d2b33; --navy-line: #1a3540; --navy-sub: #8fa4a0;
+    --cream: #F4F0ED; --sand: #EADCD1; --sand-border: #d4c9be;
+    --orange: #F56B3F; --orange-fade: rgba(245,107,63,0.10); --orange-border: rgba(245,107,63,0.25);
+    --purple: #AE47FF; --purple-fade: rgba(174,71,255,0.10); --purple-border: rgba(174,71,255,0.25);
+    --green: #38B238; --green-fade: rgba(56,178,56,0.10); --green-border: rgba(56,178,56,0.25);
+    --red: #FF4847; --red-fade: rgba(255,72,71,0.10); --red-border: rgba(255,72,71,0.25);
+    --white: #FFFFFF; --mid-text: #5b7280; --line: #e0d8d0;
+    --radius: 10px; --shadow: 0 1px 4px rgba(7,30,36,0.06);
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  html, body { overflow-x: hidden; }
+  body {
+    background: var(--cream); color: var(--navy);
+    font-family: -apple-system, "Segoe UI", Inter, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .mono { font-family: "SF Mono", "Cascadia Code", Consolas, monospace; font-variant-numeric: tabular-nums; }
+  a { color: inherit; }
+  button { font-family: inherit; }
+  input, select, textarea, button { font-family: inherit; }
+  input:focus-visible, select:focus-visible, textarea:focus-visible, button:focus-visible, [tabindex]:focus-visible {
+    outline: 2px solid var(--blue); outline-offset: 2px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; }
+  }
+
+  /* ---------- header ---------- */
+  .hdr { background: var(--navy); padding: 18px 24px 0; position: sticky; top: 0; z-index: 100; }
+  .hdr-inner { max-width: 1100px; margin: 0 auto; }
+  .hdr-top { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 14px; padding-bottom: 14px; }
+  .brand-row { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; flex-wrap: wrap; }
+  .brand-badge { display: flex; align-items: center; gap: 6px; background: var(--yellow); color: var(--navy); font-size: 10px; letter-spacing: 0.06em; padding: 2px 9px 2px 3px; border-radius: 20px; font-weight: 800; }
+  .brand-badge img { width: 18px; height: 18px; display: block; border-radius: 50%; }
+  .dot { width: 5px; height: 5px; border-radius: 50%; background: var(--navy-sub); }
+  .hdr-date { font-size: 10px; color: var(--navy-sub); }
+  .save-dot { font-size: 9px; margin-left: 2px; }
+  .save-saved { color: var(--green); } .save-saving { color: var(--yellow); } .save-error { color: var(--red); }
+  .greet { font-size: 22px; font-weight: 800; color: var(--white); letter-spacing: -0.01em; }
+  .habit-row { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+  .habit-dot { width: 32px; height: 32px; border-radius: 50%; border: 2px solid var(--navy-line); background: transparent; font-size: 14px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all .15s; }
+  .habit-dot.done { border-color: var(--yellow); background: var(--yellow-fade); }
+  .habit-count { font-size: 11px; color: var(--navy-sub); font-weight: bold; }
+  .habit-count.full { color: var(--yellow); }
+
+  .stat-bars { display: flex; flex-wrap: wrap; border-top: 1px solid var(--navy-line); }
+  .stat-bar { flex: 1 1 110px; min-width: 0; padding: 10px 12px 12px 0; border-right: 1px solid var(--navy-line); }
+  .stat-bar:first-child { padding-left: 0; }
+  .stat-bar:last-child { border-right: none; }
+  .stat-bar-head { display: flex; justify-content: space-between; margin-bottom: 5px; }
+  .stat-bar-label { font-size: 8px; color: var(--navy-sub); letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; }
+  .stat-bar-val { font-size: 9px; font-weight: bold; }
+  .stat-track { height: 3px; background: var(--navy-line); border-radius: 2px; overflow: hidden; }
+  .stat-fill { height: 100%; border-radius: 2px; }
+
+  /* ---------- tabs ---------- */
+  .tabbar { background: var(--white); border-bottom: 1px solid var(--line); overflow-x: auto; position: sticky; top: 106px; z-index: 99; box-shadow: 0 2px 8px rgba(7,30,36,0.06); }
+  .tabbar-inner { max-width: 1100px; margin: 0 auto; display: flex; min-width: max-content; padding: 0 24px; }
+  .tab-btn { padding: 12px 15px; background: transparent; border: none; border-bottom: 3px solid transparent; color: var(--mid-text); font-size: 11px; cursor: pointer; font-weight: 500; letter-spacing: 0.04em; white-space: nowrap; text-transform: uppercase; }
+  .tab-btn.active { border-bottom-color: var(--blue); color: var(--blue); font-weight: 800; }
+
+  .content { max-width: 1100px; margin: 0 auto; padding: 24px 24px 120px; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  @media (max-width: 720px) { .grid-2 { grid-template-columns: 1fr; } .hdr-top { flex-direction: column; } .stat-bars { flex-wrap: wrap; } .stat-bar { flex: 1 1 40%; } }
+
+  /* ---------- section header ---------- */
+  .sec-head { font-size: 10px; color: var(--mid-text); letter-spacing: 0.13em; text-transform: uppercase; font-weight: 700; margin-bottom: 12px; display: flex; justify-content: space-between; }
+  .sec-head .count { font-family: "SF Mono", Consolas, monospace; font-size: 11px; }
+
+  /* ---------- tag ---------- */
+  .tag { font-size: 10px; padding: 2px 8px; border-radius: 20px; font-family: "SF Mono", Consolas, monospace; white-space: nowrap; flex-shrink: 0; font-weight: bold; border: 1px solid transparent; }
+
+  /* ---------- add-item card ---------- */
+  .add-card { background: var(--white); border: 1.5px solid var(--line); border-radius: var(--radius); padding: 14px; margin-bottom: 16px; box-shadow: var(--shadow); }
+  .add-row { display: flex; gap: 8px; flex-wrap: wrap; }
+  .add-row input[type="text"], .add-row input:not([type]), .add-row select, .add-row input[type="date"] {
+    background: var(--cream); border: 1.5px solid var(--line); border-radius: 8px; padding: 9px 11px; color: var(--navy); font-size: 13px; outline: none;
+  }
+  .add-row .grow { flex: 1 1 160px; }
+  .add-row .med { flex: 0 1 130px; font-size: 12px; }
+  .add-btn { border: none; border-radius: 8px; padding: 0 16px; color: var(--white); font-weight: 700; font-size: 12px; cursor: pointer; min-height: 38px; }
+  .add-hint { font-size: 10px; color: var(--mid-text); margin-top: 7px; }
+
+  .show-completed-btn { background: transparent; border: 1.5px solid var(--line); border-radius: 20px; padding: 5px 14px; color: var(--mid-text); font-size: 11px; font-weight: 700; cursor: pointer; margin-bottom: 12px; }
+
+  /* ---------- card ---------- */
+  .card-list { display: flex; flex-direction: column; gap: 8px; }
+  .empty-msg { font-size: 12px; color: var(--mid-text); padding: 14px 4px; text-align: center; }
+  .card { background: var(--white); border: 1.5px solid var(--line); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+  .card.done { background: var(--green-fade); border-color: var(--green-border); box-shadow: none; }
+  .card-main { padding: 13px 14px; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+  .card-left { display: flex; align-items: center; gap: 10px; min-width: 0; flex: 1 1 auto; }
+  .check { width: 16px; height: 16px; border-radius: 4px; flex-shrink: 0; border: 2px solid var(--sand-border); display: flex; align-items: center; justify-content: center; font-size: 10px; color: var(--white); font-weight: bold; }
+  .check.done { border-color: var(--green); background: var(--green); }
+  .card-text { font-size: 13px; font-weight: 600; color: var(--navy); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .card-text.done { color: var(--mid-text); text-decoration: line-through; }
+  .card-right { display: flex; gap: 6px; align-items: center; flex-shrink: 0; flex-wrap: wrap; justify-content: flex-end; }
+  .icon-btn { background: transparent; border: none; color: var(--mid-text); cursor: pointer; font-size: 10px; font-weight: 700; padding: 3px 5px; display: flex; align-items: center; gap: 3px; }
+  .icon-btn .chev { font-size: 9px; transition: transform .15s; }
+  .icon-btn.open .chev { transform: rotate(180deg); }
+  .del-btn { background: transparent; border: none; color: var(--sand-border); cursor: pointer; font-size: 14px; }
+  .card-body { padding: 0 14px 16px; border-top: 1px solid var(--line); }
+  .field-label { font-size: 9px; color: var(--mid-text); letter-spacing: 0.11em; text-transform: uppercase; font-weight: 700; margin-bottom: 8px; margin-top: 16px; }
+  .field-label:first-child { margin-top: 14px; }
+  .linked-note { margin-top: 14px; font-size: 11px; color: var(--mid-text); background: var(--blue-fade); border: 1px solid var(--blue-border); border-radius: 8px; padding: 8px 10px; }
+  .move-row { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+  .move-row select, .move-row input { background: var(--white); border: 1.5px solid var(--line); border-radius: 8px; padding: 7px 9px; font-size: 11px; color: var(--navy); outline: none; }
+  .move-row .go-btn { background: var(--navy); border: none; border-radius: 8px; padding: 0 12px; color: var(--white); font-weight: 700; font-size: 11px; cursor: pointer; min-height: 30px; }
+  .chip-row { display: flex; gap: 5px; flex-wrap: wrap; }
+  .chip { border-radius: 20px; padding: 3px 10px; font-size: 10px; font-weight: 700; cursor: pointer; border: 1.5px solid var(--line); background: var(--white); color: var(--mid-text); }
+  .chip.active { background: var(--blue-fade); border-color: var(--blue-border); color: var(--blue); }
+  .micro-hint { font-size: 9.5px; color: var(--mid-text); margin-top: 6px; }
+  .link-row-item, .comment-item { background: var(--cream); border-radius: 8px; }
+  .link-row-item { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 6px 10px; }
+  .link-row-item a { font-size: 12px; color: var(--blue); font-weight: 600; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .comment-item { padding: 8px 11px; }
+  .comment-top { display: flex; justify-content: space-between; gap: 8px; }
+  .comment-text { font-size: 12px; color: var(--navy); line-height: 1.4; }
+  .comment-time { font-size: 9px; color: var(--mid-text); margin-top: 4px; }
+  .stack-gap { display: flex; flex-direction: column; gap: 8px; margin-bottom: 10px; }
+  .inline-form { display: flex; gap: 6px; flex-wrap: wrap; }
+  .inline-form input { flex: 1 1 150px; background: var(--white); border: 1.5px solid var(--line); border-radius: 8px; padding: 7px 9px; font-size: 11px; color: var(--navy); outline: none; }
+  .inline-form input.short { flex: 0 1 120px; }
+  .inline-form button { border: none; border-radius: 8px; padding: 0 12px; color: var(--white); font-weight: 700; font-size: 11px; cursor: pointer; min-height: 30px; }
+
+  .bucket-label { font-size: 9px; letter-spacing: 0.11em; text-transform: uppercase; font-weight: 700; margin-bottom: 8px; }
+
+  /* ---------- win of the day / affirmation ---------- */
+  textarea.win { width: 100%; background: var(--white); border: 1.5px solid var(--line); border-radius: var(--radius); padding: 12px 14px; color: var(--navy); font-size: 13px; outline: none; resize: none; height: 64px; }
+  textarea.win:focus { border-color: var(--yellow); }
+  .affirmation { margin-top: 24px; background: var(--navy); border-radius: 12px; padding: 20px; border: 2px solid var(--blue); }
+  .affirmation-label { font-size: 10px; color: var(--blue); letter-spacing: 0.15em; text-transform: uppercase; font-weight: 800; margin-bottom: 10px; }
+  .affirmation-text { font-size: 17px; color: var(--white); font-weight: 700; line-height: 1.4; }
+  .affirmation-sub { font-size: 11px; color: var(--navy-sub); margin-top: 8px; }
+
+  /* ---------- habits grid ---------- */
+  .habits-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .habit-card { background: var(--white); border: 1.5px solid var(--line); border-radius: var(--radius); padding: 11px 13px; cursor: pointer; display: flex; align-items: center; gap: 10px; }
+  .habit-card.done { background: var(--green-fade); border-color: var(--green-border); }
+  .habit-card .emoji { font-size: 18px; }
+  .habit-card .label { font-size: 12px; font-weight: 500; color: var(--mid-text); }
+  .habit-card.done .label { font-weight: 700; color: var(--green); }
+  .habit-card .mark { margin-left: auto; color: var(--green); }
+
+  /* ---------- weekly summary ---------- */
+  .summary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .summary-row { background: var(--white); border: 1.5px solid var(--line); border-radius: var(--radius); padding: 11px 13px; display: flex; align-items: center; justify-content: space-between; }
+  .summary-row .name { font-size: 12px; font-weight: 600; }
+  .summary-row .num { font-size: 13px; font-weight: 800; }
+
+  /* ---------- reminders widget ---------- */
+  .rw-item { background: var(--white); border: 1.5px solid var(--line); border-radius: var(--radius); padding: 11px 13px; cursor: pointer; display: flex; align-items: center; gap: 10px; box-shadow: var(--shadow); }
+  .rw-item.overdue { border-color: rgba(255,72,71,0.35); }
+  .rw-check { width: 16px; height: 16px; border-radius: 4px; flex-shrink: 0; border: 2px solid var(--sand-border); }
+  .rw-text { flex: 1; font-size: 12px; font-weight: 600; color: var(--navy); min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .view-all-btn { margin-top: 12px; background: transparent; border: 1.5px solid var(--line); border-radius: 20px; padding: 6px 14px; color: var(--mid-text); font-size: 11px; font-weight: 700; cursor: pointer; }
+
+  .sandra-toggle { display: flex; gap: 8px; margin-bottom: 20px; }
+  .sandra-toggle button { border-radius: 20px; padding: 7px 16px; font-size: 12px; font-weight: 700; cursor: pointer; border: 1.5px solid var(--line); background: var(--white); color: var(--mid-text); }
+  .sandra-toggle button.on-tasks { background: var(--blue); color: var(--white); border-color: var(--blue); }
+  .sandra-toggle button.on-reminders { background: var(--yellow); color: var(--navy); border-color: var(--yellow); }
+
+  /* ---------- chat ---------- */
+  .chat-fab { position: fixed; bottom: 28px; right: 28px; width: 54px; height: 54px; border-radius: 50%; background: var(--blue); border: none; cursor: pointer; font-size: 20px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(46,92,251,0.4); z-index: 200; color: var(--white); }
+  .chat-panel { position: fixed; bottom: 94px; right: 28px; width: 340px; max-width: calc(100vw - 32px); background: var(--white); border: 1.5px solid var(--line); border-radius: 16px; overflow: hidden; z-index: 199; box-shadow: 0 8px 40px rgba(7,30,36,0.18); display: flex; flex-direction: column; max-height: 440px; }
+  .chat-head { padding: 12px 16px; background: var(--navy); border-bottom: 3px solid var(--blue); }
+  .chat-head .title { font-size: 10px; color: var(--blue); letter-spacing: 0.16em; text-transform: uppercase; font-weight: 800; }
+  .chat-head .sub { font-size: 11px; color: var(--navy-sub); margin-top: 1px; }
+  .chat-body { flex: 1; overflow-y: auto; padding: 12px; display: flex; flex-direction: column; gap: 8px; min-height: 120px; }
+  .msg { padding: 8px 12px; border-radius: 10px; font-size: 12px; max-width: 85%; line-height: 1.45; font-weight: 500; }
+  .msg.user { align-self: flex-end; background: var(--blue); color: var(--white); }
+  .msg.assistant { align-self: flex-start; background: var(--cream); color: var(--navy); }
+  .chat-input-row { padding: 10px 10px 6px; border-top: 1px solid var(--line); display: flex; gap: 8px; }
+  .chat-input-row input { flex: 1; background: var(--cream); border: 1.5px solid var(--line); border-radius: 8px; padding: 8px 11px; color: var(--navy); font-size: 12px; outline: none; }
+  .chat-send { background: var(--blue); border: none; border-radius: 8px; padding: 0 12px; color: var(--white); font-weight: bold; cursor: pointer; font-size: 15px; }
+  .chat-foot { padding: 0 10px 10px; font-size: 9.5px; color: var(--mid-text); line-height: 1.4; }
+
+  .loading-screen { min-height: 100vh; background: var(--cream); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 16px; }
+  .spinner { width: 44px; height: 44px; border-radius: 50%; border: 3px solid var(--blue); border-top-color: transparent; animation: spin 0.8s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+</style>
+
+<div id="root"></div>
+
+<script>
+(function () {
+  "use strict";
+
+  var LOGO_B64 = "iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAABeJSURBVHhe7VwHdFTV1g4QSRAUEJBOAoQUEtJISCgCioogSA8lgCKiCOpTKXZRhCciiggiGmmPIlJEBFFReAJJCCENAiFUxQgRmEnmlkmZycz3r33uDMR7J5Ppw/sXWetbszLt3vm+c/beZ+69UzY2Nj4+Pj4+C27Da/BZ6uPjg9vwGpgK8idvw3O4LYCXcVsAL+O2AF7GbQG8jP8lAerA388XLe7xQ0Brf3QJuBMhgQ3ZY4fW/mjetD786/uy9yk/e8vi1hTA17ceunZuiLGDWuC95wOw5cMQpG6IQOH30bi8vzvUqXHgjsSBz4iH5kg8VIfj8Nf+WBTsisbh/0Rg8+JgvDOzA0Y/3IKJVLduXcU1bhHcOgLQyB4zsAVS3g3CiW+jIGbGAwUJQGECcKoHDMfjUZkTh/KsOGgz4yBmdod4tDt7pP/peXqd3kfvlz6XwETK3R6FlW91xogBzXFP4/qKa3sR3hWgXt26GHxfM2x4PxiXD3QHChIZ6frcOEYud8R50Pfoc+OB0yRIIv78JRar3+uCB3veAx8fr88M7whwV8M7MHN8G+RsiwROJjDSaQTLyXMHKrLimBjG/ARkbI7E1FGt0cCPfIfyPj0AzwrgV78eXkhui3N7Y4DCRFTlxYO3QJInwGd0h5HMVWEiCnbFYNro1t7wFZ4TYNgDLZC3Iwo4kwhdrmdGu63Q58Wz+zr6dSQG9ibTpLx/N8H9ArRp4Y9NH4Qw+0sOUv7j7YXmSByEjGggLwhV2aEsGqo4FoHKrHDFe+0F8uOB/ASkvNsFzZp4xFm7V4DhA1qgaH93FpHQlJf/YEcgZMRAldoTG756Fwe2PQN9TgjO7BuCkz+OQFlmpOL99kI42h04k4DzP8bi4V5unw3uEqAO/v1iIBv1FIFo0pU/1FEgrzNWrfwYdw8GQsYBOzfMRa8n1YieVI6zvwxms0H+GXtB91t1PB6GEwl4/ekAC7/PZXC9ABTh7Pw0DDib6LJQsjqQG4S1X76PVsOB0S/m44fNLzEhgpKAvB/GQJfVVfEZR0AiaDO7s9+xcVEI/NgqW/l7nYRrBWjdwh8ZX0eyKSz/Qa5CxbFwnP55GPo8dRW/738YyA3GoJkXmSiST1B+xhlQlEYi7F8dgaZ3u9wvuE6A9q0a4OSuGOB0D5eaHDPI+eqywoBTbXB872iMn5ULFLSCKi0Ro148yZxxeWY3xedcAfo95McoSmre1E/x252AawRo1dwfJ7+LAQocJ1/MiGYjmEwM2Xl6pP/NjrUyqyuyd4/Hgg/XIenlPPSddhXLlq/AOx9sxmMvFKLot/vZe5DXCcacYGiPRimu4Qyqi9DkLpfNBOcFIJtPN+XoyKeRTSTTVE//bjI2rXkHKasWY8vat5C28wlcOdgXOBGI4kN9ETtZZLY/aCwQPsGA9iOBlsOA4HFAwhQNxs/OxqKPVuPXrc/i2uFeTEgSQzwarbiuIzCL8OtXEahfv56CCwfgrAB1sHNZGLP5jpBPoKjl3C+DMfDZP9BlLBAwGugwSnokYu976hqef+cnPPPGb+z1yIm6GyARRr54CgOe+Ys54c5JQPtRQKckoP/TV/Dawu0sVCXzRDNDnxUGPiNWcQ92gUQ4m4j1C4Mt8GE3nBNgwQuBwLlE5U3aATIVVw/3xvB/nca9w4DQ8TdJ7pasZ/8HjpZIjapGPolBn6EFWfHBvuj3dDFCxxulz03UI3ScJCSJ8siMC1i8NAW5piiJzButJ+T3YivMjnnOlPYKTuyE4wIM7d+cZS+dDTXJBNEsKE3vgcUfp6DXk9cZ4TSSiUDzbCAxqo9+IrvvtGJc3D8Qfx+6D/c/ffmGANVBYgSPBTNXXSdUYdzsLGxd/wYzS86IQCFq1YkE9ItrquDGDjgmQMtm/ix9TDkdjYWbsxfMDxyNZDb7ysF+2L3pZXz0ySrMW7QFiz5aixUrPkWvqWp0nWC4QSzNBiKcnieHHDbe+I8ZYgkRyVXoOAa4azCwdNlKdj35vdgK82Lt7A8xaNzoDgVHNsIxAVhup9Bxu28N5JCR20WKhAj57VCSloDEKRqEVTNPZhHouepmyxIikg3Mn5hnU++pxdiz+SXonVw3MKd8NhGfvRmk4MhG2C/Ao32bMdPjqtxObSDHmb17HHO4NILl5MpBpopEIdtvJjwiWYdHZlzEnPe+w/ebXoYqrSf02WHQpDuflaXckSE/AX1iHTJF9glA+fz8b6PY1JPfiLtAYeS+b2YyQsmeywk3o9MYyW9QWqL31OtInp2F+Ys3Yvv613Bi70hGNltj5HZx6RqBTLAxvwfSNnRD3Tp21xPsE2Dm+LZsyslvwp0g0javmcdGspx0NuIn6hGRrMcTr6bjqy8+QPp3j+PywX4sPW1e0FHkQws9+Xe7ElRPmPBoSwVntcB2ARrd6YsLP8awwrf84u4Ekfjp8hXMnMjJJ3SdYET8EzyLhMhfmFfPTsf7dkJ/PB7Hd0ThDl+7Fmi2CzB9bBumsvzC7gbF+W+9v7VGAcKTpcgof+9Il2VCHQWVN8cNulfBnRXYJoBvvbrI3RbFSnfyi7oXsTDkhODZNw+w8FFOvhlk/yktbczpYuE7PAdDfjwOrYuwpznMNgEG9m4m9dhYuKg7wWfEMHNCyTdKNciJN4Nmx2effeJUXO8KCBm0NkhAQuTdCg5rgG0CUN8OZTrlF3Q3aLVKa4CBMy6x6EZOvBnkoGfN38MiHPl3eBq0Plr+emcFhzWgdgGoOF383+4e69upDsrv/3lgAHo+WapYhFUHhahDZp6CkB4MIT0EXHr1MDMWXFoouNQgcKnB0iP9T89buKazqMyOw4W9MbizgU0VtNoFoP5KamSSX8gToPw+FduJZLOzlaPTKD06jDDisVlqXM1+DmUnxoE7eh+41C4S4Wmh4I9PhnDxKwh/7oBw4XPwx58AlxYOLp1qDa4fWMaTCXiIdd4p+bRbAOrV9JYAFFIe/vZJlkaQJ+NodRswQo8Jb5Xh1yMalKhLoBXKIPIiRPXvjHA+NwnCpc0Q+QqIohGioDc96iAU7ZKuk+769QGZoSWzOiq4tADrAtzhWxf5O6Ogy/V09COBbPr3m2ZbjIA6jdLhg3UCjJUqoEqFCkENUVMigRMksnmtRL6mFKKGXjejBKIWEC6skGaJhWs7A+p/OrKxmy3RkHUBwjo3gjYznuU75BfxBCiqWZeyULEGILPz7AdawGAmviaQIPLnCCqIogHCld/ApYW43B9Qqppa6Nu18ldwapcAtKigxln5BTwFEuDjZasUAnQYrseOXzRMACW5tYDjTKaoCvypWSYBlNd2FtR0/EifWv2AdQEWvBDA7Jn8yz0FyuNYWgW3H67HF9t5wKiCICfYIlQms1QJseQyhCv/BZ//tCkaUl7XFSDe5kxpp+DULgG2LgkBTno+/jeDMqHPvb2PVciqC9BljB5DZ5WjQlSjUpSTbQGCAWLJJfCnXgKX2R9cWhi4VPeMfDPIcqS8U2udwJoAdZC+sRsMHk8/SKBkGmU0J83NZPVguROmCOi9FAEwXgcqVSjj1NByZtLJEZOp0Zls/UFwWQPBHe4ILp16h1xr8y0B+T3w0xddLfBqowAN/H1xZk80W1jIv9wToHotgQrv8m4IQrdkHQJH6PCvj0QUnCthzthYrkK5KELgtBBLiyVTc+plKeZPo0Sd534L9cTmbI1EnTpWI6GaBWjZzI+tgMuOee6mq4OKJtQF/eD0IqtpiMARenRLrsSwORVInleJvIMfQncqCdyxhyTSaUF2xPHiu6OoyI7D+b0xaHin1RVxzQJ0bNsAJWm0IU755Z4AJeGKfnsAvaeqraYhCOETJL/QYgjw7bqZQHYbj5mamkAD98qB7rj3HqutjDULENKxIdth6GzbiaOgVpWz+4YgdrIW4ROU7SaWQNHSmi8XeT0rSqCdm9cOxaFdywYKbm0SoGunhhCOek8AKq7k7klihXhbivFmARYvXX2LCNCd7V/u0NpBAbw9AygPlLZzCrP/8jxQTaC09NwFu26JtLT2WByuHezu+Ay46QO844Slbojnau2GqA6qjE19LZW1nPBetP8E8gHUvEYb0OXc2iQAOQ9yIt6KgmgU79zwisVEXE2gcHXkiwWmtsMoU/gZKkVDbsh6WgNFQef2RqOh9bpAzQLQ5uUzuz21DqCiCYWMQeAOd2ahI3La4j8p7yKghmK8JZC5GvDMZVw72A3ao93A5YxguX9KS3NH4k2pB0/8HmkdkO3MOoBWwtRs5IqtpTUjDlxahERM7jjwZxaCP78UfMGrwOkHsHJlze0olkC9o3GTS3AhczF06qMQOY2UkqY80PVC8CemekwEthJeFWaBV5sF8MGWJcHs4Av5l7sGRH4YuMy+EIr2SESJBgmCHqi6jhVfX2eZTznRNSFigrRCPnlOD0NluakOYKoRUAa0tBhc5gOmNYL8flwLygV9Ma/W2rB1AeioGLdlQ8k+Z/aDeL0AoghF0QSGUny8qcw+AZJ1CBunQ9YJDYwV8qQc1QCM4AvnSaZOfj8uBvE263Ins6FJA1u4qR4QAy41FMLlfSbylXl9qnK995VglwA0+ruM0eHwMQ1L0Mm/UxSqIFzaCu5QG8kUuXEm0I57G449sC5AaMdG7Nwel68FDnUAXzCHEaIgySyAXoXXVogs6yknuiZ0M5Uq96VpAJ0FAahefO0k+OOPs0I9d+xhKS3NIiTX+QXzIqztvU5WxKgjjvodyaPLL+IYyO6HgM+bCLH0b8k5ykkyC6BT4cWPtCzZJifaDMoB0aiv/hy9f8cvHBNQ/p1SYYYcMxXvtRA11yBcTJG6I1wYplLgkrrBBTVhwhfzXNgVQS0iOaOkXD0jwBJJamhJgAoVpi0sQ8eR/xQgapIOIWP16DhSh+jJlQgao0P4eGmzBr3efpgeq7bxzITJv/cmzMV7nhXn+QurTFlTC/fsAMj+L3opUMGlBdQuwIgHpb1g8ovYj1g23YXLP0sVqhrIZwJwahjKVRj7huSEiXQz+SRIr2kV+PpHDr8XleCbnzg2Ewj0ntZD9Nj6c00zwAJoMGjU4LIGSyGx4r7tA7Vv0mFQDyTYtGGjdgFoez4dlOd0ZxxrkJoCkafwsKZuhZuoqlBj1wENgpN0CB2rR/QkybwMnVWGS0VqACoYyujx+g1nTRj3Rhk0JepauiVkoOjo7CKXREfUvn92TzQa+NnUpl67AIR1C7o4b4ZSgyEUfWfV8cpBRffdv2lYZBM4Uo/7Z1SguFjyD0Kp9B5DuRqF50rQfpgOY18vA69RQ1+mvvG6TaBGrb/2uqRIT+bnk1c6KTisAbYJMCDxHtZu53B3NPVqZvSEqDpn1fHKwXwBVFi+hUfbx3Q4dryU2fbq5NJ7dFo1Xlku4PTZEqDSTvIJfBmEq5mmnlLHq2fUHa3PS0BcuIu7o+l0w6wtkY7vDSPbmvUoizpYFCInwArKeTVKVWrsP1IKY7nydQL5DAKZHbvJJzABjjotAO0VO7A63JboxwzbBCA8Naq14ztkaNWbPfRmGCgnwAqo74dEgGJl+0+U8crnbIagh1C02+kmLZxOxKiH3LBDhiB1ScQ4duAexdmZ/SGW/CmFfnICvApKUQB84btOOWGyDjlbo9jaSc6dFdguAGHaaEf3icWyZb/wd7qpWVZOgrthTsrJn1dJ96O+CO5ob1O7uvzebQPtDxsz0K7RT7BPANoBSCobTjjgC1KDwJ/5tyn3IydCiZtNVs7CtOiiNAQ1at1I+pkypBzHwmOpS9r+2c12y5/sgYNr7dobZoZ9AhBo4wEdxkceX34zVsEcXBzEa7lSj76CKBM4jkUytBBziQiiAfy5JeDzxkO48itErlTqEeVFCH8fAZc71rQKtp98Ajsame0La6zgygbYLwBh7YJgB84IMuX/jz0MgYkAaUTSwozMAK0PhCqg/A+s+VaF99eKbDVLYaaCVJNzpqin5gWXSvr+ayekyOZwJ6nqljMcfP508LnjJJPjRIHGfFbE0rm15v1rgmMCNG/ihz/2SSfO2ndaikkEOnq+cD6Eyz8xvyAUHwJ/aTtw8Xnk/DQDHUdq0fYxA35Nl1rQ5aEl/U/5/hKVGurrUuqaekOrk892y5B5YSOcohsimUqf4dL/rFXR8ZCTyCdTfGpXNBrd6eHTUggP92oG48lEdny8/OasI04yR+bNcumR0KRFoPxIALRHAjHyhWzW3UApCMr5/HW55B+JNRaSGlX4/ZIaI+aWYcBzFdh7SANDhfQ8vRdVHLSaInAnppkiG8dGuDVQs4IuLwE9o5oouLEDjgtAeGt6QC0nZhHZ0aYNc7RLkUivvps9Fpr0WJRnRrAuiNnzv2cHblBm05x4G/JyOWu+lYhVQcurWSIufkoFez1ojJQZTX67DF/s4LFpL4eXlgEpKatQdayNhXtyHnRSDJkeOohczomdcE4A8vpbloSym1H6gzhpqmfEgz/9BoRLX4O/+KXJ6ZEQEeygpqrsENaG/urCHYz8yGo9QCRC59GUiKtkW5JmLxPx6MvlrCuaEnTmLCkVYuh9tHGDEnKNHwHmzN/OjjmQk+cK0O+lNL2SD7vhrADSAu3Q+m6yA5yI/C7M/orXT5p2JlZJjxwP/o+NKM+9Hzjenp37nDwnk5FvqQGLZgPl+2m0U3UsOEn5Hjmol4gO+ZMOcnVdgxZzumcS8MPKcPjWsynbWRucF4DQrIkfcrZF3zy6kkZ+7hjJbrPY2+QcS2lHSykAA65euYgly79B9EResQPGWdCxBmNn5aGcnZpii6ONkfwSC5UtC2Y+spIGmxNOVw7XCEBo1dwP2duigNPS0Y7itXwT+ZIDpXCRIhqKXD7fxqP3Mwa0o4P0bDjrzV6QAPdPO4/SwyEQ0yj8tHS0fbUd9EQ8rYTZajji5nPVnDeNfCLfhYe2ElwnAIGONTi4JgBQL4NWBIRSaRspEU9FktU7efSfUYF2w/SsrOhq4gm0hbXTaAOmzb8MruBNaAvngssebiq+m3bGsy68UFabFn5fB+HqMYiqCxBV5yEUp7EGMdZJR2bU5HB/+DzclSPfDNcKQGjg54NvNn0O9mfUgC9VY/1unoWLRLwtNtwRUE8Q1YPHv1mGjLxSVGpLUCbqJN/DcRD+2CiN5kPtwGUPgfDXj1JxnhrB6JHqFAS2qx4QruWj7PQMNvLptAAX2Xw5XC+AhDpY8O4b2J1qxKBZQLvH3Ec8gerBFBm9v1ZAVbmKraD/sTCjFDiRSnvGziyEWHrVVJe2lKCjhZ6KjZ8qnR6zpg+w8PtcBncJIMG3xVAEDS9C7FNA5CTbNlk4AoqOlm/hWPWMFWUskCplPstuzAiLTQGlKpQLGkb+6YJ89O/XT/GbXAz3CkCo36AlOvZbj9gngegpro12CET+C0ukYwtolawg1Q4AVTDqK7Fi+TI0vtvmsqIzcL8AZjRt/yjChuWw2RD9hGuEINMTNakS5y+WWOgFtR2oqmSjPvXQb+jfr6/i3t0IzwlAqFvXFy3DpiN81FlJCDYjHPcNtDh75n2t5TbEWlDGlQBGPSP+eE4WJk+aqLhfD8CzAphRz/dO3Bs6DaFDjyFmChAzFYiabL8YlHpYuom3+dAOSm1XVWilAE1fgcMHD2Bi8gTc4Wt1F4s74R0BzKjj44PGbQYgsM8aRCRdQexUSQxmoibR1lTrglDe58sdnNU2xAqRuuQqpLAYVbh4/gxWfrYcffr0VtyPF+BdAarD168JmgYMQ4eeKxE27DiiJpYj5kkwU8VEmQJEPS7NFIZJRnQYASzZUA6Ag75chLGyDDDoTGRLhGvU15CZkY6lHy/BoEcG4q5GjRTX9iJuHQGqo04dH/jfHYSmASPQJvptBPbdiOBBqQgbcQYRScWIHM8hMlmLTiPLMeUdDnxJEf68eA75udk48MtPWLs6Ba+9MhdDhzyKwECbmmS9hVtTgJpATty3fhP4NWwD/7sCUb9RRzS4KxCtWrViYWM996xW3Yn/LQH+H+K2AF7GbQG8jNsCeBm3BfAyfJZaePI2PIT/Az1tCb2crZWiAAAAAElFTkSuQmCC";
+
+  var ET = { blue: "#2E5CFB", yellow: "#F1C834", navy: "#071E24", orange: "#F56B3F", purple: "#AE47FF", green: "#38B238", midText: "#5b7280" };
+
+  var STORAGE_KEY = "stan-ceo-dashboard-v14-hosted";
+  var DEFAULT_ROSTER = ["Cari", "Shonty", "Matt", "Jessica", "Ana", "Talli", "Jonathan", "Dominic"];
+
+  var SECTION_CONFIG = {
+    todayFocus: { title: "Today's Focus", color: ET.blue, extra: { field: "time", mode: "text", placeholder: "e.g. Today" } },
+    thisWeek: { title: "This Week", color: ET.green, extra: null },
+    waitingOn: { title: "In Motion — Not Your Move", color: ET.orange, extra: { field: "who", mode: "text", placeholder: "Waiting on who?" } },
+    delegated: { title: "Off Your Plate", color: ET.purple, extra: { field: "to", mode: "roster" } },
+    businessPriorities: { title: "Business Priorities", color: ET.orange, extra: { field: "category", mode: "text", placeholder: "e.g. Sales" } },
+    personal: { title: "Personal", color: ET.purple, extra: { field: "category", mode: "text", placeholder: "e.g. Finance" } },
+    parkingLot: { title: "Parking Lot — Real But Not Now", color: ET.midText, extra: null },
+    annualGoals: { title: "2026 Annual Goals", color: ET.purple, extra: null },
+    readingList: { title: "Reading List", color: ET.blue, extra: null },
+    sandraTasks: { title: "Tasks From Stan", color: ET.blue, extra: null },
+    reminders: { title: "Reminders", color: ET.yellow, extra: null, requireDeadline: true }
+  };
+  var LIST_SECTIONS = Object.keys(SECTION_CONFIG);
+
+  var DEFAULT_DATA = {
+    todayFocus: [
+      { id: 14, text: "Call mortgage company — let them know payment not received from insurance company", time: "Top Priority" },
+      { id: 12, text: "Get rid of late payment for Chase", time: "Top Priority" },
+      { id: 13, text: "Make sure all bills are paid", time: "Top Priority" },
+      { id: 10, text: "Zero APR credit card — apply before it expires", time: "Top Priority" },
+      { id: 11, text: "Pay off Citi card", time: "Top Priority" },
+      { id: 1, text: "Find a nutritionist", time: "Today" },
+      { id: 2, text: "Umbrella policy for house + articles policy for jewelry — call Kin, shop around, ask Melissa", time: "Today" },
+      { id: 3, text: "Program TVs in the car", time: "Today" },
+      { id: 4, text: "Pay bills + check which credit cards are due", time: "Today" },
+      { id: 5, text: "Program gun safe", time: "Today" },
+      { id: 6, text: "Send properties to Alex Furman — Progressive Northwest", time: "Today" },
+      { id: 7, text: "Pay Julian fines through Saturnia database", time: "Today" }
+    ],
+    thisWeek: [
+      { id: 6, text: "Talk to Lidia about rocks from quarterly" },
+      { id: 5, text: "Decide if going to LAIA in late July" },
+      { id: 4, text: "RSVP — First Tee x ASM Strong Mind Better Game webinar (June 25, 7PM ET) — email t.hall@asmsports.co" },
+      { id: 1, text: "Get new tires for Christy + oil change" },
+      { id: 2, text: "Sandra Del Risco — interviews with Mariel + Jonathan" },
+      { id: 3, text: "EA hiring decision — Sandra vs Celene" }
+    ],
+    waitingOn: [
+      { id: 1, text: "Sandra Del Risco — next round with Mariel + Jonathan", who: "Lidia" },
+      { id: 2, text: "Celene Baugh — final decision", who: "Stan" }
+    ],
+    delegated: [
+      { id: 1, text: "Podcast audit", to: "Tali" },
+      { id: 2, text: "LinkedIn posts", to: "Tali" },
+      { id: 3, text: "Reach out to clients for podcast — Danny Rojas + Jerry EO", to: "Tali" },
+      { id: 4, text: "Apollo campaigns review", to: "Matt" },
+      { id: 5, text: "Podcast studio YouTube research", to: "Tali" },
+      { id: 6, text: "INA follow ups including leads we did not meet", to: "Kyle" },
+      { id: 7, text: "Keith Kaplan — message about episode success", to: "Tali" }
+    ],
+    businessPriorities: [
+      { id: 15, text: "Accounting numbers — TM and GOATS only", category: "Finance" },
+      { id: 1, text: "EO revenue verification", category: "EO" },
+      { id: 2, text: "Podcast Playbook + Social Media Playbook", category: "Podcast" },
+      { id: 3, text: "Jerry — get him on the podcast", category: "Podcast" },
+      { id: 4, text: "Swag for podcast guests", category: "Podcast" },
+      { id: 5, text: "Chambers Bay people for podcast", category: "Podcast" },
+      { id: 6, text: "Bobby Hotaling — lunch, dinner, podcast + car show", category: "Network" },
+      { id: 7, text: "Book call with Boris from EO", category: "EO" },
+      { id: 8, text: "Hanley, Ricky, Jon Spongy — calls for more biz, now certs", category: "Sales" },
+      { id: 9, text: "Piekon — follow up buy sell life insurance agreement", category: "Insurance" },
+      { id: 10, text: "Figure out what to do with Bobby event", category: "Network" },
+      { id: 11, text: "Danny Rojas, Keyes, and anyone under my umbrella", category: "Sales" },
+      { id: 12, text: "Call Boris about tax savings", category: "Finance" },
+      { id: 13, text: "Website outline + audit", category: "Marketing" },
+      { id: 14, text: "David Staci — potential podcast guest", category: "Podcast" }
+    ],
+    personal: [
+      { id: 1, text: "Use massage gift card — book appointment at Spa Envy", category: "Personal" },
+      { id: 2, text: "Jett 529 10k contribution", category: "Finance" },
+      { id: 3, text: "Life alert for kids", category: "Family" },
+      { id: 4, text: "Youth on Course", category: "Family" },
+      { id: 5, text: "Connor + podcast guests — say hi, share episode success", category: "Network" },
+      { id: 6, text: "Check NFTs — make sure still there", category: "Finance" },
+      { id: 7, text: "Research real estate + stocks", category: "Finance" },
+      { id: 8, text: "Money aside for investments", category: "Finance" },
+      { id: 9, text: "Buy stocks", category: "Finance" },
+      { id: 10, text: "Start planning trust", category: "Finance" },
+      { id: 11, text: "Homestead act", category: "Finance" },
+      { id: 12, text: "Go see doctor — high cholesterol", category: "Health" },
+      { id: 13, text: "PAY FINES FOR JULIAN", category: "Family" },
+      { id: 14, text: "Set up gun safe — already installed", category: "House" },
+      { id: 15, text: "Have Lenny fix PPF on car", category: "Personal" },
+      { id: 16, text: "Allen Hudson email", category: "Network" },
+      { id: 17, text: "Julian golf lesson", category: "Family" },
+      { id: 18, text: "Start using Brick", category: "Health" },
+      { id: 19, text: "Buy dry water", category: "Health" },
+      { id: 20, text: "Set up camera properly", category: "Personal" },
+      { id: 21, text: "Zero APR credit card — apply before it expires", category: "Finance" },
+      { id: 25, text: "Fix rear seat in Range Rover", category: "Personal" },
+      { id: 23, text: "Get new tires for Escalade", category: "Personal" },
+      { id: 24, text: "Fix smell in Escalade", category: "Personal" }
+    ],
+    parkingLot: [
+      { id: 1, text: "Jonathan review + 1-3% profit share 2026 plan" },
+      { id: 2, text: "529 for kids" },
+      { id: 3, text: "APE COIN — sell and sort phantom wallet" },
+      { id: 4, text: "EMP Class of 2028 applications" },
+      { id: 5, text: "vseeboxtv.co — buy for house" },
+      { id: 6, text: "Wharton EO stuff — look into" },
+      { id: 7, text: "Ship out thank you cards" },
+      { id: 8, text: "David Grodner agency Boca — lunch with Kenny and Ryan" },
+      { id: 9, text: "Solid health concierge doc — look into" },
+      { id: 10, text: "Podcast plan with schedule for recording" },
+      { id: 11, text: "Juha follow up for referrals" }
+    ],
+    habits: [
+      { id: 1, text: "Workout", icon: "💪", done: false },
+      { id: 2, text: "Journal", icon: "📓", done: false },
+      { id: 3, text: "Read", icon: "📚", done: false },
+      { id: 4, text: "Stretch", icon: "🧘", done: false },
+      { id: 5, text: "Drink Water", icon: "💧", done: false },
+      { id: 6, text: "Eat Healthy", icon: "🥗", done: false },
+      { id: 7, text: "Affirmations", icon: "🙏", done: false },
+      { id: 8, text: "Visualization", icon: "🎯", done: false },
+      { id: 9, text: "Push Ups", icon: "👊", done: false },
+      { id: 10, text: "Sit Ups", icon: "🔥", done: false },
+      { id: 11, text: "Consciousness Practice", icon: "🧠", done: false }
+    ],
+    annualGoals: [
+      { id: 1, text: "Build fully staffed leadership team — Sales, Client Success, Partnerships", done: false },
+      { id: 2, text: "Step out of day to day sales and marketing seats completely", done: false },
+      { id: 3, text: "Grow Elevate Teams revenue significantly this year", done: false },
+      { id: 4, text: "Launch and grow Elevate the Hustle podcast to 1000+ listeners", done: false },
+      { id: 5, text: "Get healthy — cholesterol, consistent workout, eat clean", done: false },
+      { id: 6, text: "Be more present with Christy, Jett, and Julian", done: false },
+      { id: 7, text: "Build wealth outside the business — investments, trust, real estate", done: false },
+      { id: 8, text: "Hire and onboard an EA who removes friction from my life", done: false }
+    ],
+    readingList: [
+      { id: 1, text: "How to Change Your Mind — Michael Pollan" },
+      { id: 2, text: "Patrick Winston MIT Presentation — watch it" },
+      { id: 3, text: "Read REWORK for book club" },
+      { id: 4, text: "Zen and the Art of Motorcycle Maintenance" },
+      { id: 5, text: "The Art of Learning — Joshua Waitzkin" },
+      { id: 6, text: "Man's Search for Meaning — Viktor Frankl" }
+    ],
+    sandraTasks: [
+      { id: 101, text: "complete quaterly reviews", done: false, deadline: "2026-07-17", comments: [], links: [], linkedTo: [] },
+      { id: 102, text: "Schedule Airport pick up for Stan on July 21st", done: false, deadline: "2026-07-17", comments: [], links: [], linkedTo: [] },
+      { id: 103, text: "Create a 1:1 for Stan with Matt and Shonty", done: true, deadline: "2026-07-16", links: [], linkedTo: [],
+        comments: [
+          { id: 1031, text: "with Matt on wednesdays at 4:00pm", at: "2026-07-16T09:22:00" },
+          { id: 1032, text: "with Shonty on Thursdays at 12:30pm", at: "2026-07-16T09:23:00" }
+        ] },
+      { id: 104, text: "follow up with Kyle on the intro with Jon Spaugy", done: true, deadline: "2026-07-16", links: [], linkedTo: [],
+        comments: [ { id: 1041, text: "Meeting has been scheduled 7/24", at: "2026-07-16T09:17:00" } ] }
+    ],
+    reminders: [
+      { id: 201, text: "Remind Stan to fill out the questionnaire for his estate", done: false, deadline: "2026-07-17", comments: [], links: [], linkedTo: [] },
+      { id: 202, text: "Kyle is there an update on the INA lead I gave you last week?", done: false, deadline: "2026-07-20", comments: [], links: [], linkedTo: [] },
+      { id: 203, text: "today is the due date to cancel the event without cost EOSOFLO All Member Meeting on Sep 23rd 1:00-6:00pm confirm if he still want to attend", done: false, deadline: "2026-09-18", comments: [], links: [], linkedTo: [] },
+      { id: 204, text: "Follow up with Cari on Jennifer the referral from Daniel Rojas", done: true, deadline: "2026-07-16", comments: [], links: [], linkedTo: [] }
+    ],
+    assigneeRoster: DEFAULT_ROSTER.slice(),
+    winOfDay: "",
+    lastSaved: null
+  };
+
+  /* ================= utils ================= */
+  function esc(s) {
+    return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+  function uid() { return Date.now() + Math.floor(Math.random() * 1000); }
+  function getToday() { return new Date().toDateString(); }
+  function getTodayISO() {
+    var d = new Date();
+    return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
+  }
+  function getDayGreeting() { var h = new Date().getHours(); return h < 12 ? "Good morning" : h < 17 ? "Good afternoon" : "Good evening"; }
+  function getDateStr() { return new Date().toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric" }); }
+  function formatDeadline(d) {
+    if (!d) return null;
+    var parts = d.split("-").map(Number);
+    return new Date(parts[0], parts[1] - 1, parts[2]).toLocaleDateString("en-US", { month: "short", day: "numeric" });
+  }
+  function isOverdue(d) {
+    if (!d) return false;
+    var parts = d.split("-").map(Number);
+    var dt = new Date(parts[0], parts[1] - 1, parts[2]);
+    var t0 = new Date(); t0.setHours(0, 0, 0, 0);
+    return dt < t0;
+  }
+  function formatCommentTime(iso) {
+    var dt = new Date(iso);
+    return dt.toLocaleDateString("en-US", { month: "short", day: "numeric" }) + " · " + dt.toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit" });
+  }
+  function fadeBorderFor(color) {
+    if (color === ET.blue) return { fade: "rgba(46,92,251,0.10)", border: "rgba(46,92,251,0.22)" };
+    if (color === ET.orange) return { fade: "rgba(245,107,63,0.10)", border: "rgba(245,107,63,0.25)" };
+    if (color === ET.purple) return { fade: "rgba(174,71,255,0.10)", border: "rgba(174,71,255,0.25)" };
+    if (color === ET.green) return { fade: "rgba(56,178,56,0.10)", border: "rgba(56,178,56,0.25)" };
+    if (color === ET.yellow) return { fade: "rgba(241,200,52,0.14)", border: "rgba(241,200,52,0.35)" };
+    return { fade: "rgba(91,114,128,0.10)", border: "rgba(91,114,128,0.25)" };
+  }
+
+  function backfillItem(it) {
+    return Object.assign({}, it, {
+      done: it.done === true,
+      deadline: it.deadline || null,
+      comments: Array.isArray(it.comments) ? it.comments : [],
+      links: Array.isArray(it.links) ? it.links : [],
+      linkedTo: Array.isArray(it.linkedTo) ? it.linkedTo : [],
+      completedAt: it.completedAt || null
+    });
+  }
+  function normalizeData(d) {
+    var out = Object.assign({}, d);
+    LIST_SECTIONS.forEach(function (key) { out[key] = (out[key] || []).map(backfillItem); });
+    out.assigneeRoster = (out.assigneeRoster && out.assigneeRoster.length) ? out.assigneeRoster : DEFAULT_ROSTER.slice();
+    return out;
+  }
+  function keyOf(section, id) { return section + ":" + id; }
+
+  /* ================= state ================= */
+  var data = null;
+  var ui = {
+    activeTab: "today",
+    showChat: false,
+    isThinking: false,
+    saveStatus: "saved",
+    expandedTasks: {},
+    showCompleted: {},
+    sandraView: "tasks",
+    chatMessages: [{ role: "assistant", text: "Hey Stan. Tell me what needs to happen and I'll route it — today, this week, delegate it, whatever it needs. Heads up: I use simple keyword rules here (not full Claude), so double check where I filed things." }]
+  };
+  var drafts = {};       // per-section new-task draft: { text, extraText, assignee, customAssignee, deadline }
+  var moveDrafts = {};    // per section:id: { target, extraText, assignee, customAssignee, deadline }
+  var commentDrafts = {}; // per section:id: string
+  var linkDrafts = {};    // per section:id: { url, label }
+  var saveTimer = null;
+
+  function draft(section) { return drafts[section] || (drafts[section] = {}); }
+  function mDraft(k) { return moveDrafts[k] || (moveDrafts[k] = {}); }
+
+  var DATA_URL = "/api/data";
+  var pollTimer = null;
+  var lastRemoteRaw = null;
+  var savePending = false;
+
+  function apiHeaders() {
+    return { "Content-Type": "application/json" };
+  }
+
+  function load() {
+    return fetch(DATA_URL, { headers: apiHeaders() }).then(function (res) {
+      return res.json();
+    }).then(function (parsed) {
+      lastRemoteRaw = JSON.stringify(parsed);
+      if (parsed) {
+        var today = getToday();
+        if (parsed.lastSaved !== today) {
+          parsed.habits = (parsed.habits || DEFAULT_DATA.habits).map(function (h) { return Object.assign({}, h, { done: false }); });
+          parsed.winOfDay = "";
+          parsed.lastSaved = today;
+        }
+        data = normalizeData(parsed);
+      } else {
+        data = normalizeData(Object.assign({}, DEFAULT_DATA, { lastSaved: getToday() }));
+      }
+    }).catch(function () {
+      data = normalizeData(Object.assign({}, DEFAULT_DATA, { lastSaved: getToday() }));
+    });
+  }
+  function save() {
+    ui.saveStatus = "saving"; renderSaveStatusOnly();
+    clearTimeout(saveTimer);
+    savePending = true;
+    saveTimer = setTimeout(function () {
+      var payload = JSON.stringify(Object.assign({}, data, { lastSaved: getToday() }));
+      fetch(DATA_URL, { method: "PUT", headers: apiHeaders(), body: payload }).then(function (res) {
+        if (!res.ok) throw new Error("save failed");
+        lastRemoteRaw = payload;
+        ui.saveStatus = "saved";
+      }).catch(function () {
+        ui.saveStatus = "error";
+      }).then(function () {
+        savePending = false;
+        renderSaveStatusOnly();
+      });
+    }, 500);
+  }
+  function startPolling() {
+    if (pollTimer) return;
+    pollTimer = setInterval(function () {
+      if (savePending) return;
+      fetch(DATA_URL, { headers: apiHeaders() }).then(function (res) { return res.ok ? res.json() : null; }).then(function (parsed) {
+        if (!parsed || savePending) return;
+        var raw = JSON.stringify(parsed);
+        if (raw !== lastRemoteRaw) {
+          lastRemoteRaw = raw;
+          data = normalizeData(parsed);
+          render();
+        }
+      }).catch(function () {});
+    }, 4000);
+  }
+  function renderSaveStatusOnly() {
+    var el = document.getElementById("save-status");
+    if (!el) return;
+    el.className = "save-dot save-" + ui.saveStatus;
+    el.textContent = ui.saveStatus === "saved" ? "● saved" : ui.saveStatus === "saving" ? "● saving..." : "● error";
+  }
+
+  function commit() { save(); render(); }
+
+  /* ================= mutators ================= */
+  function removeItem(section, id) { data[section] = data[section].filter(function (i) { return i.id !== id; }); commit(); }
+  function toggleHabit(id) { data.habits = data.habits.map(function (h) { return h.id === id ? Object.assign({}, h, { done: !h.done }) : h; }); commit(); }
+  function toggleDone(section, id) {
+    data[section] = data[section].map(function (i) {
+      if (i.id !== id) return i;
+      var nowDone = !i.done;
+      return Object.assign({}, i, { done: nowDone, completedAt: nowDone ? new Date().toISOString() : null });
+    });
+    commit();
+  }
+  function toggleShowCompleted(section) { ui.showCompleted[section] = !ui.showCompleted[section]; render(); }
+  function toggleExpand(section, id) { var k = keyOf(section, id); ui.expandedTasks[k] = !ui.expandedTasks[k]; render(); }
+
+  function ensureRosterHas(name) {
+    if (name && !(data.assigneeRoster || []).some(function (r) { return r.toLowerCase() === name.toLowerCase(); })) {
+      data.assigneeRoster = (data.assigneeRoster || []).concat([name]);
+    }
+  }
+
+  function addTaskToSection(section) {
+    var cfg = SECTION_CONFIG[section];
+    var d = draft(section);
+    var text = (d.text || "").trim();
+    if (!text) return;
+    if (cfg.requireDeadline && !d.deadline) return;
+    var extra = {};
+    if (cfg.extra) {
+      if (cfg.extra.mode === "roster") {
+        var val = d.assignee === "__other__" ? (d.customAssignee || "").trim() : (d.assignee || "").trim();
+        extra[cfg.extra.field] = val || "Unassigned";
+        ensureRosterHas(val);
+      } else {
+        extra[cfg.extra.field] = (d.extraText || "").trim();
+      }
+    }
+    var task = Object.assign({ id: uid(), text: text, done: false, deadline: d.deadline || null, comments: [], links: [], linkedTo: [] }, extra);
+    data[section] = data[section].concat([task]);
+    drafts[section] = {};
+    commit();
+  }
+
+  function moveItem(fromSection, id) {
+    var k = keyOf(fromSection, id);
+    var d = mDraft(k);
+    var toSection = d.target;
+    if (!toSection || toSection === fromSection) return;
+    var destCfg = SECTION_CONFIG[toSection];
+    var item = (data[fromSection] || []).find(function (i) { return i.id === id; });
+    if (!item) return;
+
+    var extra = {};
+    if (destCfg.extra) {
+      if (destCfg.extra.mode === "roster") {
+        var val = d.assignee === "__other__" ? (d.customAssignee || "").trim() : (d.assignee || "").trim();
+        extra[destCfg.extra.field] = val || "Unassigned";
+        ensureRosterHas(val);
+      } else {
+        extra[destCfg.extra.field] = (d.extraText || "").trim();
+      }
+    }
+    var deadline = item.deadline;
+    if (destCfg.requireDeadline) {
+      deadline = d.deadline || item.deadline || "";
+      if (!deadline) return;
+    }
+    var movedItem = Object.assign({}, item, extra, { deadline: deadline || null });
+    data[fromSection] = data[fromSection].filter(function (i) { return i.id !== id; });
+    data[toSection] = (data[toSection] || []).concat([movedItem]);
+    delete moveDrafts[k];
+    ui.expandedTasks[k] = false;
+    commit();
+  }
+
+  function toggleLinkedTo(homeSection, id, targetSection) {
+    data[homeSection] = data[homeSection].map(function (i) {
+      if (i.id !== id) return i;
+      var current = i.linkedTo || [];
+      var next = current.indexOf(targetSection) >= 0 ? current.filter(function (s) { return s !== targetSection; }) : current.concat([targetSection]);
+      return Object.assign({}, i, { linkedTo: next });
+    });
+    commit();
+  }
+
+  function addComment(section, id) {
+    var k = keyOf(section, id);
+    var text = (commentDrafts[k] || "").trim();
+    if (!text) return;
+    var comment = { id: uid(), text: text, at: new Date().toISOString() };
+    data[section] = data[section].map(function (t) { return t.id === id ? Object.assign({}, t, { comments: (t.comments || []).concat([comment]) }) : t; });
+    delete commentDrafts[k];
+    commit();
+  }
+  function removeComment(section, id, commentId) {
+    data[section] = data[section].map(function (t) { return t.id === id ? Object.assign({}, t, { comments: (t.comments || []).filter(function (c) { return c.id !== commentId; }) }) : t; });
+    commit();
+  }
+  function addLink(section, id) {
+    var k = keyOf(section, id);
+    var d = linkDrafts[k] || {};
+    var url = (d.url || "").trim();
+    if (!url) return;
+    if (!/^https?:\/\//i.test(url)) url = "https://" + url;
+    var label = (d.label || "").trim() || url.replace(/^https?:\/\//i, "").slice(0, 42);
+    var link = { id: uid(), url: url, label: label };
+    data[section] = data[section].map(function (t) { return t.id === id ? Object.assign({}, t, { links: (t.links || []).concat([link]) }) : t; });
+    delete linkDrafts[k];
+    commit();
+  }
+  function removeLink(section, id, linkId) {
+    data[section] = data[section].map(function (t) { return t.id === id ? Object.assign({}, t, { links: (t.links || []).filter(function (l) { return l.id !== linkId; }) }) : t; });
+    commit();
+  }
+
+  /* ================= chat NLU (keyword rules, no external API) ================= */
+  var WEEKDAYS = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
+  function isoOf(dt) { return dt.getFullYear() + "-" + String(dt.getMonth() + 1).padStart(2, "0") + "-" + String(dt.getDate()).padStart(2, "0"); }
+  function addDays(dt, n) { var d2 = new Date(dt); d2.setDate(d2.getDate() + n); return d2; }
+
+  function resolveDate(text) {
+    var base = new Date(); base.setHours(0, 0, 0, 0);
+    var lower = text.toLowerCase();
+    var m;
+    if ((m = lower.match(/\b(\d{4})-(\d{2})-(\d{2})\b/))) return m[0];
+    if ((m = lower.match(/\b(\d{1,2})\/(\d{1,2})(?:\/(\d{2,4}))?\b/))) {
+      var mo = parseInt(m[1], 10), da = parseInt(m[2], 10);
+      var yr = m[3] ? (m[3].length === 2 ? 2000 + parseInt(m[3], 10) : parseInt(m[3], 10)) : base.getFullYear();
+      return isoOf(new Date(yr, mo - 1, da));
+    }
+    if (/\btoday\b/.test(lower)) return isoOf(base);
+    if (/\btomorrow\b/.test(lower)) return isoOf(addDays(base, 1));
+    if ((m = lower.match(/\bin\s+(\d+)\s+days?\b/))) return isoOf(addDays(base, parseInt(m[1], 10)));
+    if (/\bend of month\b/.test(lower)) { var eom = new Date(base.getFullYear(), base.getMonth() + 1, 0); return isoOf(eom); }
+    if (/\bend of week\b|\bbefore the weekend\b/.test(lower)) {
+      var untilFri = (5 - base.getDay() + 7) % 7; return isoOf(addDays(base, untilFri === 0 ? 7 : untilFri));
+    }
+    if (/\bnext week\b/.test(lower)) return isoOf(addDays(base, 7));
+    if (/\bin a month\b|\ba month from now\b/.test(lower)) return isoOf(addDays(base, 30));
+    for (var i = 0; i < WEEKDAYS.length; i++) {
+      var re = new RegExp("\\b(next\\s+)?" + WEEKDAYS[i] + "\\b");
+      if ((m = lower.match(re))) {
+        var target = i, cur = base.getDay();
+        var delta = (target - cur + 7) % 7; if (delta === 0) delta = 7;
+        if (m[1]) delta += 7;
+        return isoOf(addDays(base, delta));
+      }
+    }
+    return null;
+  }
+
+  function findRosterName(text) {
+    var roster = data.assigneeRoster || [];
+    for (var i = 0; i < roster.length; i++) {
+      var re = new RegExp("\\b" + roster[i].replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "\\b", "i");
+      if (re.test(text)) return roster[i];
+    }
+    var m = text.match(/\b(?:to|on|from|with)\s+([A-Z][a-z]+)\b/);
+    return m ? m[1] : null;
+  }
+
+  function cleanTaskText(text, section) {
+    var t = text;
+    if (section === "delegated") {
+      t = t.replace(/^(?:please\s+)?(?:delegate|assign|hand(?:ing)?|give)\s+(?:this\s+|it\s+|the\s+)*/i, "");
+      t = t.replace(/\s+(?:to|over to)\s+[A-Za-z]+\s*(?:instead)?\s*$/i, "");
+    } else if (section === "waitingOn") {
+      t = t.replace(/^(?:i'?m\s+|i\s+am\s+)?(?:waiting on|blocked on|pending from)\s+/i, "");
+    } else if (section === "sandraTasks") {
+      t = t.replace(/^(?:please\s+)?(?:sandra[,\s]+|have sandra\s+|put this on sandra'?s? plate[:,]?\s*)/i, "");
+    } else if (section === "reminders") {
+      // Only trim the self-referential lead-in (remind me/sandra/stan) — if a third
+      // party is named (e.g. "remind Kyle to..."), keep it: that name is the only
+      // place that context lives, since reminders have no separate "who" tag.
+      t = t.replace(/^(?:please\s+)?remind\s+(?:me|sandra|stan)\s+to\s+/i, "");
+    }
+    t = t.trim().replace(/^[-:,\s]+/, "");
+    if (!t) return text;
+    return t.charAt(0).toUpperCase() + t.slice(1);
+  }
+
+  function guessCategory(section, text) {
+    var existing = {};
+    (data[section] || []).forEach(function (i) { if (i.category) existing[i.category.toLowerCase()] = i.category; });
+    var lower = text.toLowerCase();
+    var rules = section === "personal"
+      ? [[/health|doctor|gym|cholesterol|workout/, "Health"], [/famil|kid|son|daughter|christy|jett|julian/, "Family"], [/financ|money|tax|invest|stock|trust/, "Finance"], [/house|home|safe|camera/, "House"], [/network|lunch|dinner|referral/, "Network"]]
+      : [[/sale|client|deal|cold.?call/, "Sales"], [/podcast|episode|guest/, "Podcast"], [/financ|money|tax|invest|accounting/, "Finance"], [/market|website|social/, "Marketing"], [/insur/, "Insurance"], [/network|lunch|dinner/, "Network"], [/\beo\b/, "EO"]];
+    for (var i = 0; i < rules.length; i++) {
+      if (rules[i][0].test(lower)) {
+        var guess = rules[i][1];
+        var match = existing[guess.toLowerCase()];
+        return match || guess;
+      }
+    }
+    return "General";
+  }
+
+  function findItem(fragment) {
+    var frag = fragment.toLowerCase().replace(/^(the|my|that|this)\s+/, "").replace(/\s+(task|item)$/, "").trim();
+    if (!frag) return null;
+    var best = null, bestScore = 0;
+    LIST_SECTIONS.forEach(function (section) {
+      (data[section] || []).forEach(function (item) {
+        var t = item.text.toLowerCase();
+        var score = 0;
+        if (t.indexOf(frag) >= 0 || frag.indexOf(t) >= 0) score = Math.max(t.length, frag.length);
+        else {
+          var words = frag.split(/\s+/).filter(function (w) { return w.length > 2; });
+          words.forEach(function (w) { if (t.indexOf(w) >= 0) score += w.length; });
+        }
+        if (score > bestScore) { bestScore = score; best = { section: section, item: item }; }
+      });
+    });
+    return bestScore >= 3 ? best : null;
+  }
+
+  var SECTION_ALIASES = {
+    "today": "todayFocus", "today's focus": "todayFocus", "focus": "todayFocus", "top priority": "todayFocus",
+    "this week": "thisWeek", "week": "thisWeek",
+    "waiting": "waitingOn", "waiting on": "waitingOn", "blocked": "waitingOn",
+    "delegated": "delegated", "off your plate": "delegated",
+    "sandra": "sandraTasks", "sandra tasks": "sandraTasks",
+    "business": "businessPriorities", "priorities": "businessPriorities",
+    "personal": "personal",
+    "parking": "parkingLot", "parking lot": "parkingLot",
+    "goals": "annualGoals", "annual goals": "annualGoals",
+    "reading": "readingList", "reading list": "readingList",
+    "reminders": "reminders"
+  };
+  function findSectionByName(name) {
+    var lower = name.toLowerCase().trim();
+    if (SECTION_ALIASES[lower]) return SECTION_ALIASES[lower];
+    var keys = Object.keys(SECTION_ALIASES);
+    for (var i = 0; i < keys.length; i++) { if (lower.indexOf(keys[i]) >= 0) return SECTION_ALIASES[keys[i]]; }
+    return null;
+  }
+
+  function handleChatMessage(raw) {
+    var text = raw.trim();
+    var lower = text.toLowerCase();
+    var m;
+
+    if ((m = lower.match(/\b(?:delete|remove)\b\s+(.+)/))) {
+      var found = findItem(m[1]);
+      if (found) { data[found.section] = data[found.section].filter(function (i) { return i.id !== found.item.id; }); return "Removed: “" + found.item.text + "” from " + SECTION_CONFIG[found.section].title + "."; }
+      return "Couldn't find a matching item to delete. Try naming more of the task text.";
+    }
+
+    if ((m = lower.match(/^(?:mark\s+)?(.+?)\s+(?:is\s+|as\s+)?(?:done|complete|completed|finished)\s*$/)) || (m = lower.match(/^(?:finished|completed|finish|complete)\s+(.+)$/))) {
+      var found2 = findItem(m[1]);
+      if (found2) {
+        data[found2.section] = data[found2.section].map(function (i) { return i.id === found2.item.id ? Object.assign({}, i, { done: true, completedAt: new Date().toISOString() }) : i; });
+        return "Marked done: “" + found2.item.text + "”.";
+      }
+      return "Couldn't find that task to mark done.";
+    }
+
+    if ((m = lower.match(/reassign\s+(?:the\s+)?(.+?)\s+to\s+(\w+)/))) {
+      var found3 = findItem(m[1]);
+      var name = m[2].charAt(0).toUpperCase() + m[2].slice(1);
+      if (found3) {
+        ensureRosterHas(name);
+        if (found3.section === "delegated" || SECTION_CONFIG[found3.section].extra && SECTION_CONFIG[found3.section].extra.field === "to") {
+          data[found3.section] = data[found3.section].map(function (i) { return i.id === found3.item.id ? Object.assign({}, i, { to: name }) : i; });
+        } else {
+          data[found3.section] = data[found3.section].filter(function (i) { return i.id !== found3.item.id; });
+          data.delegated = data.delegated.concat([Object.assign({}, found3.item, { to: name })]);
+        }
+        return "Reassigned “" + found3.item.text + "” to " + name + ".";
+      }
+      return "Couldn't find that task to reassign.";
+    }
+
+    if ((m = lower.match(/move\s+(?:the\s+)?(.+?)\s+to\s+([a-z' ]+)$/))) {
+      var found4 = findItem(m[1]);
+      var destKey = findSectionByName(m[2]);
+      if (found4 && destKey && destKey !== found4.section) {
+        var destCfg = SECTION_CONFIG[destKey];
+        var deadline = found4.item.deadline;
+        if (destCfg.requireDeadline && !deadline) deadline = isoOf(addDays(new Date(), 3));
+        var moved = Object.assign({}, found4.item, { deadline: deadline });
+        data[found4.section] = data[found4.section].filter(function (i) { return i.id !== found4.item.id; });
+        data[destKey] = (data[destKey] || []).concat([moved]);
+        return "Moved “" + found4.item.text + "” to " + destCfg.title + ".";
+      }
+      return "Couldn't match that move — try 'move <task> to <tab name>'.";
+    }
+
+    // default: create a new item
+    var section = "thisWeek";
+    var extra = {};
+    var deadline = resolveDate(lower);
+    var replyNote = "";
+
+    if (/\bremind|\bfollow up|\bcircle back|\bcheck in\b/.test(lower)) {
+      section = "reminders";
+      if (!deadline) { deadline = isoOf(addDays(new Date(), 3)); replyNote = " (no date mentioned, set 3 days out — adjust if needed)"; }
+    } else if (/\bsandra\b/.test(lower) && /\b(assign|handle|put this on|task for)\b/.test(lower)) {
+      section = "sandraTasks";
+    } else if (/\bdelegate|\bassign to|\bhand(?:ing)? (?:this|it) to|\bgive (?:this|it) to\b/.test(lower)) {
+      section = "delegated";
+      extra.to = findRosterName(text) || "Unassigned";
+      ensureRosterHas(extra.to);
+    } else if (/\bwaiting on|\bblocked on|\bpending from\b/.test(lower)) {
+      section = "waitingOn";
+      extra.who = findRosterName(text) || "Someone";
+    } else if (/\basap|\burgent|\bright now|\bbefore end of day|\btoday\b/.test(lower)) {
+      section = "todayFocus";
+      extra.time = /\basap|\burgent|\bbefore it expires|\bmoney\b|\bexpir/.test(lower) ? "Top Priority" : "Today";
+    } else if (/\bsomeday|\bnot now|\blow priority|\bpark it|\breal but not now\b/.test(lower)) {
+      section = "parkingLot";
+    } else if (/\bread\b|\bbook\b|\barticle\b|\bwatch\b|\bpodcast episode\b/.test(lower)) {
+      section = "readingList";
+    } else if (/\bannual goal|\bthis year\b|\byearly\b/.test(lower)) {
+      section = "annualGoals";
+    } else if (/\bbusiness\b|\bpodcast\b|\bclient\b|\bsale\b|\bmarketing\b|\bwebsite\b/.test(lower)) {
+      section = "businessPriorities";
+      extra.category = guessCategory("businessPriorities", text);
+    } else if (/\bpersonal\b|\bfamily\b|\bhealth\b|\bhome\b|\bhouse\b/.test(lower)) {
+      section = "personal";
+      extra.category = guessCategory("personal", text);
+    } else if (/\bby friday|\bbefore the weekend|\bthis week\b/.test(lower)) {
+      section = "thisWeek";
+    } else {
+      replyNote = " (nothing matched strongly — filed under This Week, move it if that's not right)";
+    }
+
+    var cfg = SECTION_CONFIG[section];
+    if (cfg.requireDeadline && !deadline) { deadline = isoOf(addDays(new Date(), 3)); replyNote = replyNote || " (no date mentioned, set 3 days out)"; }
+
+    var task = Object.assign({ id: uid(), text: cleanTaskText(text, section), done: false, deadline: deadline || null, comments: [], links: [], linkedTo: [] }, extra);
+    data[section] = data[section].concat([task]);
+
+    var extraBit = extra.to ? " → " + extra.to : extra.who ? " (waiting on " + extra.who + ")" : extra.category ? " [" + extra.category + "]" : "";
+    var dueBit = deadline ? " — due " + formatDeadline(deadline) : "";
+    return "Added to " + cfg.title + extraBit + dueBit + "." + replyNote;
+  }
+
+  function sendChat(userText) {
+    if (!userText || !userText.trim() || ui.isThinking) return;
+    ui.chatMessages.push({ role: "user", text: userText.trim() });
+    ui.isThinking = true;
+    render();
+    setTimeout(function () {
+      var reply = handleChatMessage(userText.trim());
+      ui.chatMessages.push({ role: "assistant", text: reply });
+      ui.isThinking = false;
+      commit();
+      var body = document.querySelector(".chat-body");
+      if (body) body.scrollTop = body.scrollHeight;
+    }, 260);
+  }
+
+  /* ================= render helpers ================= */
+  function tag(label, color, fade, border) {
+    return '<span class="tag" style="color:' + color + ';background:' + fade + ';border-color:' + border + '">' + esc(label) + "</span>";
+  }
+
+  function renderAddForm(section) {
+    var cfg = SECTION_CONFIG[section];
+    var d = draft(section);
+    var html = '<div class="add-card"><div class="add-row">';
+    html += '<input class="grow" type="text" id="draft-text-' + section + '" placeholder="Add to ' + esc(cfg.title) + '..." value="' + esc(d.text || "") + '" data-action="draft-text" data-section="' + section + '">';
+    if (cfg.extra && cfg.extra.mode === "text") {
+      html += '<input class="med" type="text" id="draft-extra-' + section + '" placeholder="' + esc(cfg.extra.placeholder) + '" value="' + esc(d.extraText || "") + '" data-action="draft-extra" data-section="' + section + '">';
+    }
+    if (cfg.extra && cfg.extra.mode === "roster") {
+      html += '<select id="draft-assignee-' + section + '" data-action="draft-assignee" data-section="' + section + '"><option value="">Assign to...</option>';
+      (data.assigneeRoster || []).forEach(function (name) { html += '<option value="' + esc(name) + '"' + (d.assignee === name ? " selected" : "") + ">" + esc(name) + "</option>"; });
+      html += '<option value="__other__"' + (d.assignee === "__other__" ? " selected" : "") + ">+ Other...</option></select>";
+      if (d.assignee === "__other__") {
+        html += '<input class="med" type="text" id="draft-custom-' + section + '" placeholder="Type name" value="' + esc(d.customAssignee || "") + '" data-action="draft-custom" data-section="' + section + '">';
+      }
+    }
+    html += '<input type="date" id="draft-deadline-' + section + '" value="' + esc(d.deadline || "") + '" data-action="draft-deadline" data-section="' + section + '">';
+    html += '<button class="add-btn" style="background:' + cfg.color + '" data-action="add-task" data-section="' + section + '">Add</button>';
+    html += "</div>";
+    html += '<div class="add-hint">' + (cfg.requireDeadline ? "Pick the date you want to be reminded — required for reminders." : "Deadline is optional — leave it blank if there isn't one.") + "</div>";
+    html += "</div>";
+    return html;
+  }
+
+  function renderTaskCard(homeSection, item, displaySection) {
+    var cfg = SECTION_CONFIG[homeSection];
+    var isLinkedView = displaySection !== homeSection;
+    var k = keyOf(displaySection, item.id);
+    var isOpen = !!ui.expandedTasks[k];
+    var commentCount = (item.comments || []).length;
+    var linkCount = (item.links || []).length;
+    var extraVal = cfg.extra ? item[cfg.extra.field] : null;
+    var extraColors = fadeBorderFor(cfg.color);
+
+    var html = '<div class="card' + (item.done ? " done" : "") + '" data-card="' + homeSection + ":" + item.id + '">';
+    html += '<div class="card-main" data-action="toggle-done" data-section="' + homeSection + '" data-id="' + item.id + '">';
+    html += '<div class="card-left"><div class="check' + (item.done ? " done" : "") + '">' + (item.done ? "✓" : "") + "</div>";
+    html += '<div class="card-text' + (item.done ? " done" : "") + '">' + esc(item.text) + "</div></div>";
+    html += '<div class="card-right" data-action="noop">';
+    if (isLinkedView) html += tag("🔗 " + SECTION_CONFIG[homeSection].title, ET.blue, "rgba(46,92,251,0.10)", "rgba(46,92,251,0.22)");
+    if (extraVal) html += tag(extraVal, cfg.color, extraColors.fade, extraColors.border);
+    if (item.deadline) {
+      var overdue = !item.done && isOverdue(item.deadline);
+      html += tag(formatDeadline(item.deadline), overdue ? "#ff4847" : ET.blue, overdue ? "rgba(255,72,71,0.10)" : "rgba(46,92,251,0.10)", overdue ? "rgba(255,72,71,0.25)" : "rgba(46,92,251,0.22)");
+    }
+    html += '<button class="icon-btn' + (isOpen ? " open" : "") + '" data-action="toggle-expand" data-section="' + displaySection + '" data-id="' + item.id + '">';
+    html += "⇄ · 💬" + (commentCount > 0 ? " " + commentCount : "") + " · 🔗" + (linkCount > 0 ? " " + linkCount : "") + '<span class="chev">▾</span></button>';
+    html += '<button class="del-btn" title="' + (isLinkedView ? "Unlink" : "Delete") + '" data-action="' + (isLinkedView ? "unlink" : "delete-item") + '" data-section="' + homeSection + '" data-id="' + item.id + '" data-display="' + displaySection + '">✕</button>';
+    html += "</div></div>";
+
+    if (isOpen) {
+      html += '<div class="card-body" data-action="noop">';
+      if (isLinkedView) {
+        html += '<div class="linked-note">📌 Linked from <strong>' + esc(SECTION_CONFIG[homeSection].title) + "</strong> — completing it, or adding comments/links, updates the original everywhere it's shown. The ✕ above only unlinks it from this tab.</div>";
+      }
+      if (!isLinkedView) {
+        var md = mDraft(k);
+        html += '<div class="field-label">Move To</div><div class="move-row">';
+        html += '<select data-action="move-target" data-section="' + homeSection + '" data-id="' + item.id + '"><option value="">Move to a different tab...</option>';
+        Object.keys(SECTION_CONFIG).filter(function (s) { return s !== homeSection; }).forEach(function (s) {
+          html += '<option value="' + s + '"' + (md.target === s ? " selected" : "") + ">" + esc(SECTION_CONFIG[s].title) + "</option>";
+        });
+        html += "</select>";
+        if (md.target) {
+          var dcfg = SECTION_CONFIG[md.target];
+          if (dcfg.extra && dcfg.extra.mode === "text") {
+            html += '<input type="text" placeholder="' + esc(dcfg.extra.placeholder || "Details") + '" value="' + esc(md.extraText || "") + '" data-action="move-extra" data-section="' + homeSection + '" data-id="' + item.id + '">';
+          }
+          if (dcfg.extra && dcfg.extra.mode === "roster") {
+            html += '<select data-action="move-assignee" data-section="' + homeSection + '" data-id="' + item.id + '"><option value="">Assign to...</option>';
+            (data.assigneeRoster || []).forEach(function (name) { html += '<option value="' + esc(name) + '"' + (md.assignee === name ? " selected" : "") + ">" + esc(name) + "</option>"; });
+            html += '<option value="__other__"' + (md.assignee === "__other__" ? " selected" : "") + ">+ Other...</option></select>";
+            if (md.assignee === "__other__") {
+              html += '<input type="text" placeholder="Type name" value="' + esc(md.customAssignee || "") + '" data-action="move-custom" data-section="' + homeSection + '" data-id="' + item.id + '">';
+            }
+          }
+          if (dcfg.requireDeadline) {
+            html += '<input type="date" value="' + esc(md.deadline || item.deadline || "") + '" data-action="move-deadline" data-section="' + homeSection + '" data-id="' + item.id + '">';
+          }
+          html += '<button class="go-btn" data-action="move-item" data-section="' + homeSection + '" data-id="' + item.id + '">Move</button>';
+        }
+        html += "</div>";
+
+        html += '<div class="field-label">Also Show In</div><div class="chip-row">';
+        Object.keys(SECTION_CONFIG).filter(function (s) { return s !== homeSection; }).forEach(function (s) {
+          var active = (item.linkedTo || []).indexOf(s) >= 0;
+          html += '<button class="chip' + (active ? " active" : "") + '" data-action="toggle-linked" data-section="' + homeSection + '" data-id="' + item.id + '" data-target="' + s + '">' + (active ? "✓ " : "+ ") + esc(SECTION_CONFIG[s].title) + "</button>";
+        });
+        html += '</div><div class="micro-hint">Stays here, but also appears (and can be completed from) any tab you turn on above.</div>';
+      }
+
+      html += '<div class="field-label">Reference Links</div>';
+      if (linkCount === 0) html += '<div class="empty-msg" style="padding:0 0 8px;text-align:left">No links yet.</div>';
+      html += '<div class="stack-gap">';
+      (item.links || []).forEach(function (link) {
+        html += '<div class="link-row-item"><a href="' + esc(link.url) + '" target="_blank" rel="noopener noreferrer">🔗 ' + esc(link.label) + "</a>";
+        html += '<button class="del-btn" data-action="remove-link" data-section="' + homeSection + '" data-id="' + item.id + '" data-link-id="' + link.id + '">✕</button></div>';
+      });
+      html += "</div>";
+      var ld = linkDrafts[k] || {};
+      html += '<div class="inline-form">';
+      html += '<input type="text" placeholder="Paste a link (Drive, Dropbox, etc.)" value="' + esc(ld.url || "") + '" data-action="link-url" data-section="' + homeSection + '" data-id="' + item.id + '">';
+      html += '<input class="short" type="text" placeholder="Label (optional)" value="' + esc(ld.label || "") + '" data-action="link-label" data-section="' + homeSection + '" data-id="' + item.id + '">';
+      html += '<button style="background:' + ET.blue + '" data-action="add-link" data-section="' + homeSection + '" data-id="' + item.id + '">Add Link</button>';
+      html += "</div>";
+      html += '<div class="micro-hint">Files can\'t be uploaded directly here — host the file (Google Drive, Dropbox, etc.) and paste the link.</div>';
+
+      html += '<div class="field-label">Comments</div>';
+      if (commentCount === 0) html += '<div class="empty-msg" style="padding:0 0 8px;text-align:left">No comments yet.</div>';
+      html += '<div class="stack-gap">';
+      (item.comments || []).forEach(function (c) {
+        html += '<div class="comment-item"><div class="comment-top"><div class="comment-text">' + esc(c.text) + "</div>";
+        html += '<button class="del-btn" data-action="remove-comment" data-section="' + homeSection + '" data-id="' + item.id + '" data-comment-id="' + c.id + '">✕</button></div>';
+        html += '<div class="comment-time">' + esc(formatCommentTime(c.at)) + "</div></div>";
+      });
+      html += "</div>";
+      html += '<div class="inline-form"><input type="text" placeholder="Add a comment..." value="' + esc(commentDrafts[k] || "") + '" data-action="comment-text" data-section="' + homeSection + '" data-id="' + item.id + '">';
+      html += '<button style="background:' + ET.navy + '" data-action="add-comment" data-section="' + homeSection + '" data-id="' + item.id + '">Post</button></div>';
+      html += "</div>";
+    }
+    html += "</div>";
+    return html;
+  }
+
+  function renderTaskSection(section) {
+    var cfg = SECTION_CONFIG[section];
+    var nativeEntries = (data[section] || []).map(function (i) { return { item: i, home: section }; });
+    var foreignEntries = [];
+    Object.keys(SECTION_CONFIG).filter(function (s) { return s !== section; }).forEach(function (s) {
+      (data[s] || []).filter(function (i) { return (i.linkedTo || []).indexOf(section) >= 0; }).forEach(function (i) { foreignEntries.push({ item: i, home: s }); });
+    });
+    var allEntries = nativeEntries.concat(foreignEntries);
+    var openEntries = allEntries.filter(function (e) { return !e.item.done; });
+    var doneEntries = allEntries.filter(function (e) { return e.item.done; });
+    var show = !!ui.showCompleted[section];
+    var todayISO = getTodayISO();
+
+    var html = '<div class="sec-head"><span>' + esc(cfg.title) + '</span><span class="count" style="color:' + cfg.color + '">' + allEntries.length + "</span></div>";
+    html += renderAddForm(section);
+    if (doneEntries.length > 0) html += '<button class="show-completed-btn" data-action="toggle-completed" data-section="' + section + '">' + (show ? "Hide" : "Show") + " completed (" + doneEntries.length + ")</button>";
+
+    if (section === "reminders") {
+      var overdue = openEntries.filter(function (e) { return e.item.deadline && e.item.deadline < todayISO; }).sort(function (a, b) { return a.item.deadline < b.item.deadline ? -1 : 1; });
+      var dueToday = openEntries.filter(function (e) { return e.item.deadline === todayISO; });
+      var upcoming = openEntries.filter(function (e) { return e.item.deadline && e.item.deadline > todayISO; }).sort(function (a, b) { return a.item.deadline < b.item.deadline ? -1 : 1; });
+      var noDate = openEntries.filter(function (e) { return !e.item.deadline; });
+      function bucket(label, color, entries) {
+        if (!entries.length) return "";
+        var h = '<div style="margin-bottom:18px"><div class="bucket-label" style="color:' + color + '">' + label + " (" + entries.length + ')</div><div class="card-list">';
+        entries.forEach(function (e) { h += renderTaskCard(e.home, e.item, section); });
+        return h + "</div></div>";
+      }
+      if (allEntries.length === 0) html += '<div class="empty-msg">No reminders set. Add one above.</div>';
+      html += bucket("Overdue", "#ff4847", overdue);
+      html += bucket("Today", ET.yellow, dueToday);
+      html += bucket("Upcoming", ET.blue, upcoming);
+      html += bucket("No Date", ET.midText, noDate);
+      if (show && doneEntries.length > 0) {
+        html += '<div><div class="bucket-label" style="color:' + ET.green + '">Completed (' + doneEntries.length + ')</div><div class="card-list">';
+        doneEntries.forEach(function (e) { html += renderTaskCard(e.home, e.item, section); });
+        html += "</div></div>";
+      }
+    } else {
+      html += '<div class="card-list">';
+      if (allEntries.length === 0) html += '<div class="empty-msg">Nothing here yet. Add one above.</div>';
+      if (allEntries.length > 0 && openEntries.length === 0 && doneEntries.length > 0 && !show) html += '<div class="empty-msg">All done. Tap "Show completed" to review.</div>';
+      openEntries.forEach(function (e) { html += renderTaskCard(e.home, e.item, section); });
+      if (show) doneEntries.forEach(function (e) { html += renderTaskCard(e.home, e.item, section); });
+      html += "</div>";
+    }
+    return html;
+  }
+
+  function renderTodayRemindersWidget() {
+    var todayISO = getTodayISO();
+    var due = (data.reminders || []).filter(function (i) { return !i.done && i.deadline && i.deadline <= todayISO; }).sort(function (a, b) { return a.deadline < b.deadline ? -1 : 1; });
+    var html = '<div class="sec-head"><span>Reminders — Today</span><span class="count" style="color:' + ET.yellow + '">' + due.length + "</span></div>";
+    if (due.length === 0) html += '<div class="empty-msg">Nothing due today. 🎉</div>';
+    due.forEach(function (item) {
+      var overdue = item.deadline < todayISO;
+      html += '<div class="rw-item' + (overdue ? " overdue" : "") + '" data-action="toggle-done" data-section="reminders" data-id="' + item.id + '" style="margin-bottom:8px">';
+      html += '<div class="rw-check"></div><div class="rw-text">' + esc(item.text) + "</div>";
+      if (overdue) html += tag("Overdue", "#ff4847", "rgba(255,72,71,0.10)", "rgba(255,72,71,0.25)");
+      html += "</div>";
+    });
+    html += '<button class="view-all-btn" data-action="sandra-view" data-view="reminders">🔔 View all reminders</button>';
+    return html;
+  }
+
+  function renderWeeklySummary() {
+    var now = Date.now(), weekMs = 7 * 24 * 60 * 60 * 1000;
+    var rows = LIST_SECTIONS.map(function (key) {
+      var items = data[key] || [];
+      var count = items.filter(function (i) { return i.done && i.completedAt && (now - new Date(i.completedAt).getTime()) <= weekMs; }).length;
+      return { key: key, title: SECTION_CONFIG[key].title, color: SECTION_CONFIG[key].color, count: count };
+    });
+    var total = rows.reduce(function (s, r) { return s + r.count; }, 0);
+    var html = '<div style="margin-top:32px"><div class="sec-head"><span>Weekly Summary — Completed Across All Tabs</span><span class="count" style="color:' + ET.green + '">' + total + "</span></div><div class=\"summary-grid\">";
+    rows.forEach(function (r) {
+      html += '<div class="summary-row"><span class="name">' + esc(r.title) + '</span><span class="num" style="color:' + (r.count > 0 ? r.color : "#d4c9be") + '">' + r.count + "</span></div>";
+    });
+    html += '</div><div class="add-hint">Counts items marked done in the last 7 days. Un-completing something removes it from this count.</div></div>';
+    return html;
+  }
+
+  /* ================= main render ================= */
+  var TABS = [
+    { id: "today", label: "Today", emoji: "⚡" }, { id: "week", label: "This Week", emoji: "📅" },
+    { id: "waiting", label: "Waiting On", emoji: "⏳" }, { id: "delegated", label: "Delegated", emoji: "🤝" },
+    { id: "sandra", label: "Sandra Tasks", emoji: "📋" },
+    { id: "business", label: "Business", emoji: "💼" }, { id: "personal", label: "Personal", emoji: "🏠" },
+    { id: "parking", label: "Parking Lot", emoji: "🅿️" }, { id: "goals", label: "Goals", emoji: "🎯" }
+  ];
+
+  function render() {
+    var root = document.getElementById("root");
+    var habitsCompleted = data.habits.filter(function (h) { return h.done; }).length;
+
+    var html = "";
+    html += '<div class="hdr"><div class="hdr-inner">';
+    html += '<div class="hdr-top"><div>';
+    html += '<div class="brand-row"><span class="brand-badge"><img src="data:image/png;base64,' + LOGO_B64 + '" alt=""> elevate teams</span>';
+    html += '<span class="dot"></span><span class="hdr-date">' + getDateStr() + "</span>";
+    html += '<span id="save-status" class="save-dot save-' + ui.saveStatus + '">' + (ui.saveStatus === "saved" ? "● saved" : ui.saveStatus === "saving" ? "● saving..." : "● error") + "</span>";
+    html += "</div>";
+    html += '<div class="greet">' + getDayGreeting() + ", Stan.</div></div>";
+    html += '<div class="habit-row">';
+    data.habits.forEach(function (h) {
+      html += '<button class="habit-dot' + (h.done ? " done" : "") + '" title="' + esc(h.text) + '" data-action="toggle-habit" data-id="' + h.id + '">' + h.icon + "</button>";
+    });
+    html += '<div class="habit-count' + (habitsCompleted === data.habits.length ? " full" : "") + '">' + habitsCompleted + "/" + data.habits.length + "</div>";
+    html += "</div></div>";
+
+    html += '<div class="stat-bars">';
+    var bars = [
+      { label: "Today", count: data.todayFocus.length, color: ET.blue },
+      { label: "This Week", count: data.thisWeek.length, color: ET.green },
+      { label: "Habits", done: habitsCompleted, total: data.habits.length, color: ET.yellow },
+      { label: "Business", count: data.businessPriorities.length, color: ET.orange },
+      { label: "Personal", count: data.personal.length, color: ET.purple }
+    ];
+    bars.forEach(function (bar) {
+      var val = bar.done !== undefined ? bar.done + "/" + bar.total : bar.count;
+      var pct = bar.done !== undefined ? (bar.done / bar.total) * 100 : 100;
+      html += '<div class="stat-bar"><div class="stat-bar-head"><span class="stat-bar-label">' + bar.label + '</span><span class="stat-bar-val" style="color:' + bar.color + '">' + val + "</span></div>";
+      html += '<div class="stat-track"><div class="stat-fill" style="width:' + pct + "%;background:" + bar.color + '"></div></div></div>';
+    });
+    html += "</div></div></div>";
+
+    html += '<div class="tabbar"><div class="tabbar-inner">';
+    TABS.forEach(function (t) {
+      html += '<button class="tab-btn' + (ui.activeTab === t.id ? " active" : "") + '" data-action="set-tab" data-tab="' + t.id + '">' + t.emoji + " " + t.label + "</button>";
+    });
+    html += "</div></div>";
+
+    html += '<div class="content">';
+    if (ui.activeTab === "today") {
+      html += '<div class="grid-2"><div>';
+      html += renderTaskSection("todayFocus");
+      html += '<div style="margin-top:24px"><div class="sec-head"><span>Win of the Day</span></div>';
+      html += '<textarea class="win" id="win-of-day" placeholder="What was today\'s win? One line. 10 seconds.">' + esc(data.winOfDay) + "</textarea></div>";
+      html += "</div><div>";
+      html += '<div class="sec-head"><span>Daily Habits</span><span class="count" style="color:' + ET.yellow + '">' + habitsCompleted + "/" + data.habits.length + "</span></div>";
+      html += '<div class="habits-grid">';
+      data.habits.forEach(function (h) {
+        html += '<div class="habit-card' + (h.done ? " done" : "") + '" data-action="toggle-habit" data-id="' + h.id + '"><span class="emoji">' + h.icon + '</span><span class="label">' + esc(h.text) + "</span>";
+        if (h.done) html += '<span class="mark">✓</span>';
+        html += "</div>";
+      });
+      html += "</div></div></div>";
+    } else if (ui.activeTab === "week") { html += renderTaskSection("thisWeek"); }
+    else if (ui.activeTab === "waiting") { html += renderTaskSection("waitingOn"); }
+    else if (ui.activeTab === "delegated") { html += renderTaskSection("delegated"); }
+    else if (ui.activeTab === "sandra") {
+      html += '<div class="sandra-toggle">';
+      html += '<button class="' + (ui.sandraView === "tasks" ? "on-tasks" : "") + '" data-action="sandra-view" data-view="tasks">📋 Tasks</button>';
+      html += '<button class="' + (ui.sandraView === "reminders" ? "on-reminders" : "") + '" data-action="sandra-view" data-view="reminders">🔔 Reminders</button>';
+      html += "</div>";
+      if (ui.sandraView === "tasks") {
+        html += '<div class="grid-2"><div>' + renderTaskSection("sandraTasks") + "</div><div>" + renderTodayRemindersWidget() + "</div></div>";
+      } else {
+        html += renderTaskSection("reminders");
+      }
+      html += renderWeeklySummary();
+    } else if (ui.activeTab === "business") { html += renderTaskSection("businessPriorities"); }
+    else if (ui.activeTab === "personal") { html += renderTaskSection("personal"); }
+    else if (ui.activeTab === "parking") { html += renderTaskSection("parkingLot"); }
+    else if (ui.activeTab === "goals") {
+      html += '<div class="grid-2"><div>' + renderTaskSection("annualGoals") + "</div><div>";
+      html += renderTaskSection("readingList");
+      html += '<div class="affirmation"><div class="affirmation-label">Daily Affirmation</div><div class="affirmation-text">"I am healthy and strong."</div>';
+      html += '<div class="affirmation-sub">Repeat 3x a day. Visualize. Feel it as real.</div></div>';
+      html += "</div></div>";
+    }
+    html += "</div>";
+
+    html += '<button class="chat-fab" data-action="toggle-chat">' + (ui.showChat ? "✕" : "💬") + "</button>";
+    if (ui.showChat) {
+      html += '<div class="chat-panel"><div class="chat-head"><div class="title">Chief of Staff (keyword mode)</div><div class="sub">Tell me what to update</div></div>';
+      html += '<div class="chat-body">';
+      ui.chatMessages.forEach(function (msg) { html += '<div class="msg ' + msg.role + '">' + esc(msg.text) + "</div>"; });
+      if (ui.isThinking) html += '<div class="msg assistant">thinking...</div>';
+      html += "</div>";
+      html += '<div class="chat-input-row"><input id="chat-input" placeholder="e.g. \'reassign the Apollo review to Ana\' or \'this is due Friday\'..." value="">';
+      html += '<button class="chat-send" data-action="send-chat"' + (ui.isThinking ? " disabled" : "") + ">→</button></div>";
+      html += '<div class="chat-foot">💡 Best way to talk instead of type: use your keyboard\'s dictation button while this box is focused.</div>';
+      html += "</div>";
+    }
+
+    root.innerHTML = html;
+    var body = document.querySelector(".chat-body");
+    if (body) body.scrollTop = body.scrollHeight;
+  }
+
+  /* ================= event wiring ================= */
+  function onClick(e) {
+    var el = e.target.closest("[data-action]");
+    if (!el) return;
+    var action = el.getAttribute("data-action");
+    var section = el.getAttribute("data-section");
+    var id = el.getAttribute("data-id") ? Number(el.getAttribute("data-id")) : null;
+
+    if (action === "toggle-habit") toggleHabit(id);
+    else if (action === "toggle-done") toggleDone(section, id);
+    else if (action === "toggle-expand") toggleExpand(section, id);
+    else if (action === "delete-item") { e.stopPropagation(); removeItem(section, id); }
+    else if (action === "unlink") { e.stopPropagation(); toggleLinkedTo(section, id, el.getAttribute("data-display")); }
+    else if (action === "add-task") addTaskToSection(section);
+    else if (action === "move-item") moveItem(section, id);
+    else if (action === "toggle-linked") toggleLinkedTo(section, id, el.getAttribute("data-target"));
+    else if (action === "add-comment") addComment(section, id);
+    else if (action === "remove-comment") removeComment(section, id, Number(el.getAttribute("data-comment-id")));
+    else if (action === "add-link") addLink(section, id);
+    else if (action === "remove-link") removeLink(section, id, Number(el.getAttribute("data-link-id")));
+    else if (action === "toggle-completed") toggleShowCompleted(section);
+    else if (action === "set-tab") { ui.activeTab = el.getAttribute("data-tab"); render(); }
+    else if (action === "sandra-view") { ui.sandraView = el.getAttribute("data-view"); if (ui.activeTab !== "sandra") ui.activeTab = "sandra"; render(); }
+    else if (action === "toggle-chat") { ui.showChat = !ui.showChat; render(); if (ui.showChat) { var inp = document.getElementById("chat-input"); if (inp) inp.focus(); } }
+    else if (action === "send-chat") { var box = document.getElementById("chat-input"); if (box) { sendChat(box.value); box.value = ""; } }
+  }
+
+  function onInput(e) {
+    var el = e.target;
+    var action = el.getAttribute("data-action");
+    if (!action) return;
+    var section = el.getAttribute("data-section");
+    var id = el.getAttribute("data-id") ? Number(el.getAttribute("data-id")) : null;
+    var k = id !== null ? keyOf(section, id) : null;
+
+    if (action === "draft-text") draft(section).text = el.value;
+    else if (action === "draft-extra") draft(section).extraText = el.value;
+    else if (action === "draft-custom") draft(section).customAssignee = el.value;
+    else if (action === "draft-deadline") draft(section).deadline = el.value;
+    else if (action === "move-extra") mDraft(k).extraText = el.value;
+    else if (action === "move-custom") mDraft(k).customAssignee = el.value;
+    else if (action === "move-deadline") mDraft(k).deadline = el.value;
+    else if (action === "comment-text") commentDrafts[k] = el.value;
+    else if (action === "link-url") { linkDrafts[k] = linkDrafts[k] || {}; linkDrafts[k].url = el.value; }
+    else if (action === "link-label") { linkDrafts[k] = linkDrafts[k] || {}; linkDrafts[k].label = el.value; }
+    else if (el.id === "win-of-day") { data.winOfDay = el.value; save(); }
+  }
+
+  function onChange(e) {
+    var el = e.target;
+    var action = el.getAttribute("data-action");
+    if (!action) return;
+    var section = el.getAttribute("data-section");
+    var id = el.getAttribute("data-id") ? Number(el.getAttribute("data-id")) : null;
+    var k = id !== null ? keyOf(section, id) : null;
+
+    if (action === "draft-assignee") { draft(section).assignee = el.value; render(); }
+    else if (action === "move-target") { mDraft(k).target = el.value; render(); }
+    else if (action === "move-assignee") { mDraft(k).assignee = el.value; render(); }
+  }
+
+  function onKeydown(e) {
+    if (e.key !== "Enter") return;
+    var el = e.target;
+    var action = el.getAttribute("data-action");
+    if (action === "draft-text" || action === "draft-extra" || action === "draft-custom") addTaskToSection(el.getAttribute("data-section"));
+    else if (action === "comment-text") { var s = el.getAttribute("data-section"), i = Number(el.getAttribute("data-id")); addComment(s, i); }
+    else if (action === "link-url" || action === "link-label") { var s2 = el.getAttribute("data-section"), i2 = Number(el.getAttribute("data-id")); addLink(s2, i2); }
+    else if (el.id === "chat-input") { e.preventDefault(); sendChat(el.value); el.value = ""; }
+  }
+
+  document.addEventListener("click", onClick);
+  document.addEventListener("input", onInput);
+  document.addEventListener("change", onChange);
+  document.addEventListener("keydown", onKeydown);
+  load().then(function () { render(); startPolling(); });
+})();
+</script>
+
+</body></html>
